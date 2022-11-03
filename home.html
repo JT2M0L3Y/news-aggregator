@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiled</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0);
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .title {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .search {
+            font-size: 20px;
+            font: inherit;
+            border-radius: 10px;
+            padding-left: 5px;
+        }
+
+        .search-btn {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            font: inherit;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .links li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        .links a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 5px 5px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        .links a:hover {
+            background-color: green;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .news-content {
+            padding: 20px;
+            background-color: lightgrey;
+            flex: 1 1 70%;
+        }
+
+        .item {
+            background-color: white;
+        }
+
+        .other-div {
+            background-color: lightgrey;
+            padding: 20px;
+            flex: 0 0 10%;
+            max-width: 30%;
+            border-right: 2px solid black;
+        }
+    </style>
+
+    <script>
+        var article_count = 15;
+
+        window.onload() = function() {
+            document.getElementById("news-content")
+            for (var i = 0; i < article_count; i++) {
+                var article = document.createElement("article");
+                article.innerHTML = "<h1>Article " + i + "</h1>";
+                document.getElementById("news-content").appendChild(article);
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p class="title">Compiled</p>
+
+            <form class="form" action="#" method="GET">
+                <input type="text" id="search" class="search" name="search" placeholder="keyword or publisher">
+                <button class="search-btn">Search</button>
+            </form>
+
+            <ul class="links">
+                <li><a href="#news">Discover</a></li>
+                <li><a href="#contact">My List</a></li>
+                <li><a href="#about">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="height: 30px"></div>
+
+    <main>
+        <div class="other-div"></div>
+
+        <div class="news-content" style="padding: 20px">
+            <article class="news-articles">
+                <div class="item">
+                    <h1>Article 1</h1>
+                </div>
+            </article>
+
+            <article class="news-articles">
+                <div class="item">
+                    <h1>Article 1</h1>
+                </div>
+            </article>
+
+            <article class="news-articles">
+                <div class="item">
+                    <h1>Article 1</h1>
+                </div>
+            </article>
+
+            <article class="news-articles">
+                <div class="item">
+                    <h1>Article 1</h1>
+                </div>
+            </article>
+
+            <article class="news-articles">
+                <div class="item">
+                    <h1>Article 1</h1>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <script>
+        function validateForm() {
+            var username = document.forms["login_form"]["username"].value;
+            var password = document.forms["login_form"]["password"].value;
+            if (username === "user" && password === "pass") {
+                return true;
+            } else {
+                alert("Username and password must be filled out");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Website Login Page -->
+    <h1>Login</h1>
+    <!-- validate form for valid credentials -->
+    <form name="login_form" action="home.html" method="POST" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Register button -->
+    <form id="register_form" action="register.html" method="POST">
+        <input type="submit" value="Register">
+    </form>
+</body>
+
+</html>
