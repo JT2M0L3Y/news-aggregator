@@ -5,141 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compiled</title>
 
-    <style>
-        body {
-            margin: 0;
-        }
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            overflow: hidden;
-            background-color: rgba(0, 0, 0);
-            width: 100%;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        .title {
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .search {
-            font-size: 20px;
-            font: inherit;
-            border-radius: 10px;
-            padding-left: 5px;
-        }
-
-        .search-btn {
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            padding: 5px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            font: inherit;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-        .links li {
-            list-style: none;
-            display: inline-block;
-        }
-
-        .links a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 5px 5px;
-            text-decoration: none;
-            border-radius: 10px;
-        }
-
-        .links a:hover {
-            background-color: green;
-        }
-
-        main {
-            display: flex;
-            flex-direction: row;
-            background-color: lightgrey;
-        }
-
-        .stopper {
-            width: 100%;
-            position: fixed;
-        }
-
-        .news-content {
-            padding: 20px;
-            background-color: lightgrey;
-            flex: 1 1 70%;
-        }
-
-        .item {
-            background-color: white;
-            margin: 10px;
-            padding: 5px;
-            border-radius: 10px;
-        }
-
-        .item ul {
-            list-style: none;
-        }
-
-        .item li {
-            display: inline;
-            
-        }
-
-        .item a {
-            text-decoration: none;
-        }
-
-        .other-div {
-            background-color: lightgrey;
-            padding: 20px;
-            max-width: 20%;
-            min-width: 200px;
-            border-right: 2px solid black;
-        }
-    </style>
-
-    <script>
-        // window.addEventListener("DOMContentLoaded", domLoaded);
-
-        // var article_count = 15;
-
-        // function domLoaded() {
-        //     for (var i = 0; i < article_count; i++) {
-        //         var article = document.createElement("article");
-        //         article.innerHTML = "<h1>Article " + i + "</h1>";
-        //         document.getElementsByClassName("news-content").appendChild(article);
-        //     }
-        // };
-    </script>
+    <title>Compiled - CPSC332 WPD</title>
 </head>
 
 <body>
     <header>
-        <nav>
+        <div class="nav-bar">
             <p class="title">Compiled</p>
 
             <form class="form" action="#" method="GET">
@@ -148,84 +23,96 @@
             </form>
 
             <ul class="links">
-                <li><a href="#">Discover</a></li>
+                <li><a href="home.html">Discover</a></li>
                 <li><a href="#">My List</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="#">Login</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
     <main>
         <div class="stopper"></div>
 
         <div class="other-div"></div>
+            <div class="news-content" style="padding: 20px">
+                <article class="news-articles">
+                    <div class="item">
+                        <h3>Article 1</h3>
+                        <p>First Summary Section</p>
+                        
+                        <ul>
+                            <li><a href="#">Read More</a></li>
+                            <li><button>Add Topic</button></li>
+                            <li><button>Add Publisher</button></li>
+                        </ul>
+                    </div>
+                </article>
 
-        <div class="news-content" style="padding: 20px">
-            <article class="news-articles">
-                <div class="item">
-                    <h3>Article 1</h3>
-                    <p>First Summary Section</p>
-                    
-                    <ul>
-                        <li><a href="#">Read More</a></li>
-                        <li><button>Add Topic</button></li>
-                        <li><button>Add Publisher</button></li>
-                    </ul>
-                </div>
-            </article>
+                <article class="news-articles">
+                    <div class="item">
+                        <h3>Article 2</h3>
+                        <p>Second Summary Section</p>
+                        
+                        <ul>
+                            <li><a href="#">Read More</a></li>
+                            <li><button>Add Topic</button></li>
+                            <li><button>Add Publisher</button></li>
+                        </ul>
+                    </div>
+                </article>
 
-            <article class="news-articles">
-                <div class="item">
-                    <h3>Article 2</h3>
-                    <p>Second Summary Section</p>
-                    
-                    <ul>
-                        <li><a href="#">Read More</a></li>
-                        <li><button>Add Topic</button></li>
-                        <li><button>Add Publisher</button></li>
-                    </ul>
-                </div>
-            </article>
+                <article class="news-articles">
+                    <div class="item">
+                        <h3>Article 3</h3>
+                        <p>Third Summary Section</p>
 
-            <article class="news-articles">
-                <div class="item">
-                    <h3>Article 3</h3>
-                    <p>Third Summary Section</p>
+                        <ul>
+                            <li><a href="#">Read More</a></li>
+                            <li><button>Add Topic</button></li>
+                            <li><button>Add Publisher</button></li>
+                        </ul>
+                    </div>
+                </article>
 
-                    <ul>
-                        <li><a href="#">Read More</a></li>
-                        <li><button>Add Topic</button></li>
-                        <li><button>Add Publisher</button></li>
-                    </ul>
-                </div>
-            </article>
+                <article class="news-articles">
+                    <div class="item">
+                        <h3>Article 4</h3>
+                        <p>Fourth Summary Section</p>
 
-            <article class="news-articles">
-                <div class="item">
-                    <h3>Article 4</h3>
-                    <p>Fourth Summary Section</p>
+                        <ul>
+                            <li><a href="#">Read More</a></li>
+                            <li><button>Add Topic</button></li>
+                            <li><button>Add Publisher</button></li>
+                        </ul>
+                    </div>
+                </article>
 
-                    <ul>
-                        <li><a href="#">Read More</a></li>
-                        <li><button>Add Topic</button></li>
-                        <li><button>Add Publisher</button></li>
-                    </ul>
-                </div>
-            </article>
+                <article class="news-articles">
+                    <div class="item">
+                        <h3>Article 5</h3>
+                        <p>Fifth Summary Section</p>
 
-            <article class="news-articles">
-                <div class="item">
-                    <h3>Article 5</h3>
-                    <p>Fifth Summary Section</p>
+                        <ul>
+                            <li><a href="#">Read More</a></li>
+                            <li><button>Add Topic</button></li>
+                            <li><button>Add Publisher</button></li>
+                        </ul>
+                    </div>
+                </article>
 
-                    <ul>
-                        <li><a href="#">Read More</a></li>
-                        <li><button>Add Topic</button></li>
-                        <li><button>Add Publisher</button></li>
-                    </ul>
-                </div>
-            </article>
-        </div>
+                <article class="news-articles">
+                    <div class="item">
+                        <h3>Article 6</h3>
+                        <p>Sixth Summary Section</p>
+                
+                        <ul>
+                            <li><a href="#">Read More</a></li>
+                            <li><button>Add Topic</button></li>
+                            <li><button>Add Publisher</button></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
     </main>
 </body>
 
