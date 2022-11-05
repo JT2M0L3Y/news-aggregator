@@ -3,25 +3,12 @@ body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    width: 100%;
-}
-
 .nav-bar {
+    background-color: black;
     display: flex;
     justify-content:space-between;
     align-items: center;
-    width: 100%;
     padding: 0 20px;
-    overflow-x: scroll;
-}
-
-.nav-bar::-webkit-scrollbar {
-    display: none;
 }
 
 .title {
@@ -30,29 +17,37 @@ header {
     font-weight: bold;
 }
 
-.search {
-    font-size: 20px;
-    font: inherit;
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 0 5px;
     border-radius: 10px;
-    padding: 5px 10px;
-    min-width: 270px;
+    background-color: white;
 }
 
-.search-btn {
-    background-color: #4CAF50;
+[data-search-input] {
+    display: block;
+    font-size: 20px;
+    font: inherit;
     border: none;
     border-radius: 10px;
-    color: white;
     padding: 5px 10px;
-    font-size: 20px;
-    font: inherit;
-    margin: 4px 2px;
-    cursor: pointer;
+    width: 100%;
 }
 
-.search-btn:hover {
-    background-color: lightgrey;
-    color: #4CAF50;
+[data-search-input]:focus {
+    outline: none;
+}
+
+[data-search-icon] {
+    background-color: white;
+    width: 25px;
+    height: 25px;
+}
+
+.tabs-container {
+    padding: 0 10px;
 }
 
 .tabs li {
@@ -64,7 +59,6 @@ header {
     color: white;
     text-align: center;
     padding: 5px 5px;
-    text-decoration: none;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -73,7 +67,7 @@ header {
     background-color: #4CAF50;
 }
 
-#articles {
+.articles {
     display: flex;
     flex-direction: row;
     background-color: lightgrey;
@@ -82,7 +76,7 @@ header {
 
 .list-changes {
     padding: 10px;
-    max-width: 20%;
+    max-width: 15%;
     min-width: 175px;
     border-right: 2px solid black;
     display: flex;
@@ -102,7 +96,7 @@ header {
     cursor: pointer;
 }
 
-.scroll {
+.scrollable {
     padding: 20px;
     flex: 1 1 70%;
     overflow-y: scroll;
@@ -151,13 +145,17 @@ header {
     color: #4CAF50;
 }
 
-footer {
+.footer {
     background-color: black;
     text-align: center;
     padding: 10px;
 }
 
-footer a {
+[data-feedback] {
     color: white;
     text-decoration: none;
+}
+
+.hide {
+    display: none;
 }

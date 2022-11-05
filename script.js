@@ -33,10 +33,30 @@ const publishersContainer = document.querySelector('[data-publishers]');
 const articleTemplate = document.querySelector('[data-article-template]');
 const articlesContainer = document.querySelector('[data-articles-container]');
 
+const searchInput = document.querySelector('[data-search-input]');
+
+let articles = [];
+
+searchInput.addEventListener('keydown', (e) => {
+    if (e.keyCode == 13) {
+        const value = e.target.value;
+
+        articles.forEach(article => {
+            const isVisible = article.name.includes(value) ||
+                article.summary.includes(value) ||
+                article.publisher.includes(value);
+            
+            console.log(article.element)
+            console.log(article.element.classList)
+            article.element.classList.toggle('hide', !isVisible);
+        })
+    }
+});
+
 fetch("https://jsonplaceholder.typicode.com/users")
     .then(res => res.json())
     .then(data => {
-        data.forEach(user => {
+        articles = data.map(user => {
             const topic = topicTemplate.content.cloneNode(true).children[0];
             topicsContainer.appendChild(topic);
 
@@ -53,6 +73,12 @@ fetch("https://jsonplaceholder.typicode.com/users")
             publisher.textContent = user.company.name;
 
             articlesContainer.appendChild(article);
+
+            return {
+                name: user.name,
+                summary: user.company.catchPhrase,
+                publisher: user.company.name,
+                element: article
+            };
         })
     });
-

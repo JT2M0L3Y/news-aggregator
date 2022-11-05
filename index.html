@@ -15,22 +15,27 @@
 <body>
     <header>
         <div class="nav-bar">
-            <p class="title">Compiled</p>
+            <div class="title-container">
+                <p class="title">Compiled</p>
+            </div>
 
-            <form class="form" action="#" method="GET">
-                <input type="text" id="search" class="search" name="search" placeholder="keyword or publisher">
-                <button class="search-btn">Search</button>
-            </form>
+            <div class="search-container">
+                <img src="media/search_icon.png" data-search-icon>
+                <input type="search" name="search"
+                    placeholder="Search articles" data-search-input>
+            </div>
 
-            <ul class="tabs">
-                <li data-tab-target="#articles" class="active tab">Articles</li>
-                <li data-tab-target="#login" class="tab">Login</li>
-            </ul>
+            <div class="tabs-container">
+                <ul class="tabs">
+                    <li data-tab-target="#articles" class="active tab">Articles</li>
+                    <li data-tab-target="#login" class="tab">Login</li>
+                </ul>
+            </div>
         </div>
     </header>
 
-    <main class="tab-content">
-        <div id="articles" data-tab-content class="active">
+    <main>
+        <div class="articles active" data-tab-content>
             <div class="list-changes">
                 <h3>Sort</h3>
                 <div class="sort">
@@ -57,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="scroll" data-articles-container>
+            <div class="scrollable" data-articles-container>
                 <template data-article-template>
                     <div class="item">
                         <div data-title>Title</div>
@@ -94,7 +99,7 @@
 
     <footer>
         <div class="footer">
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" data-feedback>Contact</a>
         </div>
     </footer>
 </body>
