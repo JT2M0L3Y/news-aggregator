@@ -55,37 +55,25 @@ header {
     color: #4CAF50;
 }
 
-.links li {
+.tabs li {
     list-style: none;
     display: inline-block;
 }
 
-.links a {
+.tab {
     color: white;
     text-align: center;
     padding: 5px 5px;
     text-decoration: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-.links a:hover {
+.tab:hover {
     background-color: #4CAF50;
 }
 
-.links button {
-    border: none;
-    background-color: black;
-    color: white;
-    font: inherit;
-    padding: 5px 5px;
-    border-radius: 10px;
-}
-
-.links button:hover {
-    background-color: #4CAF50;
-}
-
-main {
+#articles {
     display: flex;
     flex-direction: row;
     background-color: lightgrey;
@@ -127,21 +115,26 @@ main {
     border-radius: 10px;
 }
 
-.item ul {
+/* .item ul {
     list-style: none;
 }
 
 .item li {
     display: inline;
     padding: 5px;
-}
+} */
 
-.item a {
+.link {
     text-decoration: none;
     padding: 4px 9px;
 }
 
-.item-button {
+.link:hover {
+    border: 1px dashed black;
+    border-radius: 10px;
+}
+
+.choice-btn {
     background-color: #4CAF50;
     border: none;
     border-radius: 10px;
@@ -153,12 +146,7 @@ main {
     cursor: pointer;
 }
 
-.item a:hover {
-    border: 1px dashed black;
-    border-radius: 10px;
-}
-
-.item button:hover {
+.choice-btn:hover {
     background-color: lightgrey;
     color: #4CAF50;
 }
