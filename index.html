@@ -27,8 +27,9 @@
 
             <div class="tabs-container">
                 <ul class="tabs">
-                    <li data-tab-target="#articles" class="active tab">Articles</li>
-                    <li data-tab-target="#login" class="tab">Login</li>
+                    <li data-tab-target=".articles" class="active tab">Articles</li>
+                    <li data-tab-target=".list" class="tab">My List</li>
+                    <li data-tab-target=".login" class="tab">Login</li>
                 </ul>
             </div>
         </div>
@@ -79,7 +80,51 @@
             </div>
         </div>
 
-        <!-- <div id="login" data-tab-content>
+        <div class="list hide" data-tab-content>
+            <div class="list-changes">
+                <h3>Sort</h3>
+                <div class="sort">
+                    <button class="sort-btn">Newest</button>
+                    <button class="sort-btn">Oldest</button>
+                </div>
+            
+                <h3>Filter</h3>
+            
+                <h4>Topic</h4>
+            
+                <div data-topics>
+                    <template class="topic-filter" data-topic-template>
+                        <button class="topic-btn" data-topic>Label</button>
+                    </template>
+                </div>
+            
+                <h4>Publisher</h4>
+            
+                <div data-publishers>
+                    <template class="publisher-filter" data-publish-template>
+                        <button class="publish-btn" data-publish>Org.</button>
+                    </template>
+                </div>
+            </div>
+            
+            <div class="scrollable" data-articles-container>
+                <template data-article-template>
+                    <div class="item">
+                        <div data-title>Title</div>
+                        <div data-summary>Summary Section</div>
+                        <div data-publisher>Publisher</div>
+                        <div class="choices">
+                            <a href="#" class="link">Read More</a>
+                            <button class="choice-btn">Add Topic</button>
+                            <button class="choice-btn">Add Publisher</button>
+                            <button class="choice-btn">Add This Article</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div id="login" class="hide" data-tab-content>
             <h1>Login</h1>
             <form name="login_form" action="#home" method="POST" onsubmit="return validateForm()"> 
                 <label for="username">Username:</label>
@@ -94,7 +139,7 @@
             <form id="register_form" action="register.html" method="POST">
                 <input type="submit" value="Register">
             </form>
-        </div> -->
+        </div>
     </main>
 
     <footer>

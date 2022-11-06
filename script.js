@@ -1,57 +1,10 @@
-const tabs = document.querySelectorAll('[data-tab-target]');
-const tabContents = document.querySelectorAll('[data-tab-content]');
-
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.tabTarget);
-        tabContents.forEach(tabContent => {
-            tabContent.classList.remove('active');
-        });
-        tabs.forEach(tab => {
-            tab.classList.remove('active');
-        });
-        tab.classList.add('active');
-        target.classList.add('active');
-    });
-});
-
-// function validateForm() {
-//     var username = document.forms["login_form"]["username"].value;
-//     var password = document.forms["login_form"]["password"].value;
-//     if (username === "user" && password === "pass") {
-//         return true;
-//     } else {
-//         alert("Username and password must be filled out");
-//         return false;
-//     }
-// }
-
+/* API request & dynamic js for articles  */
 const topicTemplate = document.querySelector('[data-topic-template]');
 const topicsContainer = document.querySelector('[data-topics]');
 const publisherTemplate = document.querySelector('[data-publish-template]');
 const publishersContainer = document.querySelector('[data-publishers]');
 const articleTemplate = document.querySelector('[data-article-template]');
 const articlesContainer = document.querySelector('[data-articles-container]');
-
-const searchInput = document.querySelector('[data-search-input]');
-
-let articles = [];
-
-searchInput.addEventListener('keydown', (e) => {
-    if (e.keyCode == 13) {
-        const value = e.target.value;
-
-        articles.forEach(article => {
-            const isVisible = article.name.includes(value) ||
-                article.summary.includes(value) ||
-                article.publisher.includes(value);
-            
-            console.log(article.element)
-            console.log(article.element.classList)
-            article.element.classList.toggle('hide', !isVisible);
-        })
-    }
-});
 
 fetch("https://jsonplaceholder.typicode.com/users")
     .then(res => res.json())
@@ -82,3 +35,57 @@ fetch("https://jsonplaceholder.typicode.com/users")
             };
         })
     });
+
+/* Upper-center search js to search for content */
+const searchInput = document.querySelector('[data-search-input]');
+
+let articles = [];
+
+searchInput.addEventListener('keydown', (e) => {
+    if (e.keyCode == 13) {
+        const value = e.target.value;
+
+        articles.forEach(article => {
+            const isVisible = article.name.includes(value) ||
+                article.summary.includes(value) ||
+                article.publisher.includes(value);
+            
+            console.log(article.element)
+            console.log(article.element.classList)
+            article.element.classList.toggle('hide', !isVisible);
+        })
+    }
+});
+
+/* Upper-right tabs js to switch pages */
+const tabs = document.querySelectorAll('[data-tab-target]');
+const tabContents = document.querySelectorAll('[data-tab-content]');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.tabTarget);
+        tabContents.forEach(tabContent => {
+            // tabContent.classList.remove('active');
+            tabContent.classList.add('hide');
+        });
+        tabs.forEach(tab => {
+            // tab.classList.remove('active');
+            tab.classList.add('hide');
+        });
+        // tab.classList.add('active');
+        // target.classList.add('active');
+        tab.classList.remove('hide');
+        target.classList.remove('hide');
+    });
+});
+
+// function validateForm() {
+//     var username = document.forms["login_form"]["username"].value;
+//     var password = document.forms["login_form"]["password"].value;
+//     if (username === "user" && password === "pass") {
+//         return true;
+//     } else {
+//         alert("Username and password must be filled out");
+//         return false;
+//     }
+// }
