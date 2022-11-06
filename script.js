@@ -65,27 +65,23 @@ tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         const target = document.querySelector(tab.dataset.tabTarget);
         tabContents.forEach(tabContent => {
-            // tabContent.classList.remove('active');
             tabContent.classList.add('hide');
         });
         tabs.forEach(tab => {
-            // tab.classList.remove('active');
             tab.classList.add('hide');
         });
-        // tab.classList.add('active');
-        // target.classList.add('active');
         tab.classList.remove('hide');
         target.classList.remove('hide');
     });
 });
 
-// function validateForm() {
-//     var username = document.forms["login_form"]["username"].value;
-//     var password = document.forms["login_form"]["password"].value;
-//     if (username === "user" && password === "pass") {
-//         return true;
-//     } else {
-//         alert("Username and password must be filled out");
-//         return false;
-//     }
-// }
+function validateForm() {
+    var username = document.forms["login_form"]["username"].value;
+    var password = document.forms["login_form"]["password"].value;
+    if (username === "user" && password === "pass") {
+        return true;
+    } else {
+        alert("Username and password must be filled out");
+        return false;
+    }
+}

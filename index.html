@@ -27,16 +27,16 @@
 
             <div class="tabs-container">
                 <ul class="tabs">
-                    <li data-tab-target=".articles" class="active tab">Articles</li>
-                    <li data-tab-target=".list" class="tab">My List</li>
-                    <li data-tab-target=".login" class="tab">Login</li>
+                    <li data-tab-target="#articles" class="active tab">Articles</li>
+                    <li data-tab-target="#list" class="tab">My List</li>
+                    <li data-tab-target="#login" class="tab">Login</li>
                 </ul>
             </div>
         </div>
     </header>
 
     <main>
-        <div class="articles active" data-tab-content>
+        <div id="articles" class="articles active" data-tab-content>
             <div class="list-changes">
                 <h3>Sort</h3>
                 <div class="sort">
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <div class="list hide" data-tab-content>
+        <div id="list" class="list hide" data-tab-content>
             <div class="list-changes">
                 <h3>Sort</h3>
                 <div class="sort">
