@@ -21,8 +21,7 @@
 
             <div class="search-container">
                 <img src="media/search_icon.png" data-search-icon>
-                <input type="search" name="search"
-                    placeholder="Search articles" data-search-input>
+                <input type="search" name="search" placeholder="Search articles" data-search-input>
             </div>
 
             <div class="tabs-container">
@@ -87,26 +86,26 @@
                     <button class="sort-btn">Newest</button>
                     <button class="sort-btn">Oldest</button>
                 </div>
-            
+
                 <h3>Filter</h3>
-            
+
                 <h4>Topic</h4>
-            
+
                 <div data-topics>
                     <template class="topic-filter" data-topic-template>
                         <button class="topic-btn" data-topic>Label</button>
                     </template>
                 </div>
-            
+
                 <h4>Publisher</h4>
-            
+
                 <div data-publishers>
                     <template class="publisher-filter" data-publish-template>
                         <button class="publish-btn" data-publish>Org.</button>
                     </template>
                 </div>
             </div>
-            
+
             <div class="scrollable" data-articles-container>
                 <template data-article-template>
                     <div class="item">
@@ -126,7 +125,7 @@
 
         <div id="login" class="hide" data-tab-content>
             <h1>Login</h1>
-            <form name="login_form" action="#home" method="POST" onsubmit="return validateForm()"> 
+            <form name="login_form" action="#home" method="POST" onsubmit="return validateForm()">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username">
                 <br>
