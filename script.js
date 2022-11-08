@@ -32,7 +32,7 @@ fetch(url + '&apikey=' + key)
             publisher.textContent = news.source_id;
             link.href = news.link;
 
-            // add button event listeners
+            // event listeners for adding/removing individual articles
             const addThis = article.querySelector('[data-add-this]');
             addThis.addEventListener('click', () => {
                 // if clicked, add new articles in list
@@ -46,6 +46,12 @@ fetch(url + '&apikey=' + key)
                 publisher.textContent = news.source_id;
                 link.href = news.link;
                 listContainer.appendChild(newListing);
+
+                // add event listener to remove button
+                const removeThis = newListing.querySelector('[data-remove-this]');
+                removeThis.addEventListener('click', () => {
+                    newListing.remove();
+                });
             });
 
             articlesContainer.appendChild(article);
@@ -93,9 +99,6 @@ tabs.forEach(tab => {
         target.classList.remove('hide');
     });
 });
-
-/* js to add/remove articles from api result to list */
-
 
 /*
 const loginForm = document.querySelector('[data-login-form]');
