@@ -1,12 +1,12 @@
 body {
     margin: 0;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .nav-bar {
     background-color: black;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
@@ -146,6 +146,54 @@ body {
 [data-feedback] {
     color: white;
     text-decoration: none;
+    font-size: 16px;
+}
+
+[data-feedback]:hover {
+    text-decoration: underline;
+}
+
+.dropbtn {
+    background: none;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn:hover {
+    text-decoration: underline;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    bottom: 100%;
+    z-index: 1;
+}
+
+.drop {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.drop:hover {
+    background-color: #4CAF50;
+}
+
+.dropup:hover .dropup-content {
+    display: block;
 }
 
 .hide {

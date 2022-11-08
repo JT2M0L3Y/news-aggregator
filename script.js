@@ -20,11 +20,11 @@ fetch(url + '&apikey=' + key)
     .then(res => res.json())
     .then(data => {
         articles = data.results.map(news => {
-            const article = articleTemplate.content.cloneNode(true).children[0];
-            const title = article.querySelector('[data-title]');
-            const summary = article.querySelector('[data-summary]');
-            const publisher = article.querySelector('[data-publisher]');
-            const link = article.querySelector('[data-link]');
+            let article = articleTemplate.content.cloneNode(true).children[0];
+            let title = article.querySelector('[data-title]');
+            let summary = article.querySelector('[data-summary]');
+            let publisher = article.querySelector('[data-publisher]');
+            let link = article.querySelector('[data-link]');
 
             // create new article element
             title.textContent = news.title;
@@ -33,14 +33,14 @@ fetch(url + '&apikey=' + key)
             link.href = news.link;
 
             // event listeners for adding/removing individual articles
-            const addThis = article.querySelector('[data-add-this]');
+            let addThis = article.querySelector('[data-add-this]');
             addThis.addEventListener('click', () => {
                 // if clicked, add new articles in list
-                const newListing = listTemplate.content.cloneNode(true).children[0];
-                const title = newListing.querySelector('[data-title]');
-                const summary = newListing.querySelector('[data-summary]');
-                const publisher = newListing.querySelector('[data-publisher]');
-                const link = newListing.querySelector('[data-link]');
+                let newListing = listTemplate.content.cloneNode(true).children[0];
+                let title = newListing.querySelector('[data-title]');
+                let summary = newListing.querySelector('[data-summary]');
+                let publisher = newListing.querySelector('[data-publisher]');
+                let link = newListing.querySelector('[data-link]');
                 title.textContent = news.title;
                 summary.textContent = news.description;
                 publisher.textContent = news.source_id;
@@ -48,7 +48,7 @@ fetch(url + '&apikey=' + key)
                 listContainer.appendChild(newListing);
 
                 // add event listener to remove button
-                const removeThis = newListing.querySelector('[data-remove-this]');
+                let removeThis = newListing.querySelector('[data-remove-this]');
                 removeThis.addEventListener('click', () => {
                     newListing.remove();
                 });
@@ -69,7 +69,7 @@ fetch(url + '&apikey=' + key)
 /* Upper-center search js to search for content */
 searchInput.addEventListener('keydown', (e) => {
     if (e.keyCode == 13) {
-        const value = e.target.value;
+        let value = e.target.value;
 
         articles.map(article => {
             let isVisible = false;
@@ -88,7 +88,7 @@ searchInput.addEventListener('keydown', (e) => {
 /* Upper-right tabs js to switch pages */
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.tabTarget);
+        let target = document.querySelector(tab.dataset.tabTarget);
         tabContents.forEach(tabContent => {
             tabContent.classList.add('hide');
         });
@@ -99,6 +99,11 @@ tabs.forEach(tab => {
         target.classList.remove('hide');
     });
 });
+
+/* listener for color scheme buttons */
+// document.querySelector('[data-scheme-1]').addEventListener('click', () => {
+
+// })
 
 /*
 const loginForm = document.querySelector('[data-login-form]');
