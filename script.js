@@ -5,6 +5,8 @@ const publisherTemplate = document.querySelector('[data-publish-template]');
 const publishersContainer = document.querySelector('[data-publishers]');
 const articleTemplate = document.querySelector('[data-article-template]');
 const articlesContainer = document.querySelector('[data-articles-container]');
+const listTemplate = document.querySelector('[data-list-template]');
+const listContainer = document.querySelector('[data-list-container]');
 const searchInput = document.querySelector('[data-search-input]');
 const tabs = document.querySelectorAll('[data-tab-target]');
 const tabContents = document.querySelectorAll('[data-tab-content]');
@@ -24,13 +26,31 @@ fetch(url + '&apikey=' + key)
             const publisher = article.querySelector('[data-publisher]');
             const link = article.querySelector('[data-link]');
 
+            // create new article element
             title.textContent = news.title;
             summary.textContent = news.description;
             publisher.textContent = news.source_id;
             link.href = news.link;
 
+            // add button event listeners
+            const addThis = article.querySelector('[data-add-this]');
+            addThis.addEventListener('click', () => {
+                // if clicked, add new articles in list
+                const newListing = listTemplate.content.cloneNode(true).children[0];
+                const title = newListing.querySelector('[data-title]');
+                const summary = newListing.querySelector('[data-summary]');
+                const publisher = newListing.querySelector('[data-publisher]');
+                const link = newListing.querySelector('[data-link]');
+                title.textContent = news.title;
+                summary.textContent = news.description;
+                publisher.textContent = news.source_id;
+                link.href = news.link;
+                listContainer.appendChild(newListing);
+            });
+
             articlesContainer.appendChild(article);
 
+            // return set for search bar
             return {
                 title: news.title,
                 summary: news.description,
@@ -75,7 +95,7 @@ tabs.forEach(tab => {
 });
 
 /* js to add/remove articles from api result to list */
-const userList = document.getElementById()
+
 
 /*
 const loginForm = document.querySelector('[data-login-form]');

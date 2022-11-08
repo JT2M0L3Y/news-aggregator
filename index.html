@@ -70,9 +70,9 @@
                         <div data-publisher>No Publisher Specified</div>
                         <div class="choices">
                             <a href="#" class="link" data-link>Read More</a>
-                            <button class="choice-btn">Add Topic</button>
-                            <button class="choice-btn">Add Publisher</button>
-                            <button class="choice-btn">Add This Article</button>
+                            <button id="add-topic" class="choice-btn">Add Topic</button>
+                            <button id="add-publish" class="choice-btn">Add Publisher</button>
+                            <button class="choice-btn" data-add-this>Add This Article</button>
                         </div>
                     </div>
                 </template>
@@ -106,7 +106,7 @@
                 </div>
             </div>
 
-            <div class="scrollable" data-articles-container>
+            <div class="scrollable" data-list-container>
                 <template data-list-template>
                     <div class="item">
                         <div data-title>No Title</div>
@@ -114,9 +114,9 @@
                         <div data-publisher>No Publisher Specified</div>
                         <div class="choices">
                             <a href="#" class="link" data-link>Read More</a>
-                            <button class="choice-btn">Remove Topic</button>
-                            <button class="choice-btn">Remove Publisher</button>
-                            <button class="choice-btn">Remove This Article</button>
+                            <button id="remove-topic" class="choice-btn">Remove Topic</button>
+                            <button id="remove-publish" class="choice-btn">Remove Publisher</button>
+                            <button id="remove-this" class="choice-btn">Remove This Article</button>
                         </div>
                     </div>
                 </template>
