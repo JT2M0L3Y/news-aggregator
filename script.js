@@ -59,8 +59,7 @@ searchInput.addEventListener('keydown', (e) => {
             let isVisible = false;
             if ((article.title != null && article.title.includes(value)) ||
                 (article.summary != null && article.summary.includes(value)) ||
-                (article.publisher != null && article.publisher.includes(value)))
-            {
+                (article.publisher != null && article.publisher.includes(value))) {
                 isVisible = true;
             }
 
@@ -84,8 +83,10 @@ tabs.forEach(tab => {
     });
 });
 
-/* temporary 'login' sequence */
+/*
 const loginForm = document.querySelector('[data-login-form]');
+const loginContainer = document.querySelector('[data-login]');
+const registerButton = document.querySelector('[data-register-btn]');
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -93,6 +94,11 @@ loginForm.addEventListener('submit', (e) => {
         window.location.href = "index.html";
     }
 })
+
+registerButton.addEventListener('click', () => { 
+    loginContainer.classList.add('hide');
+    registerContainer.classList.remove('hide');
+});
 
 function validateForm() {
     var username = document.forms["login_form"]["username"].value;
@@ -104,3 +110,22 @@ function validateForm() {
         return false;
     }
 }
+
+
+const registerForm = document.querySelector('[data-register-form]');
+const registerContainer = document.querySelector('[data-register]');
+const loginButton = document.querySelector('[data-login-btn]');
+
+registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // if () {
+    //     window.location.href = "index.html";
+    // }
+});
+
+loginButton.addEventListener('click', () => { 
+    registerContainer.classList.add('hide');
+    loginContainer.classList.remove('hide');
+});
+
+*/

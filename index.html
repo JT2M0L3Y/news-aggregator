@@ -124,20 +124,42 @@
         </div>
 
         <div id="login" class="hide" data-tab-content>
-            <h1>Login</h1>
-            <form name="login_form" action="#home" method="POST" data-login-form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-                <br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
-                <br>
-                <input type="submit" value="Submit">
-            </form>
+            <div data-login>
+                <h1>Login</h1>
+                <form name="login_form" action="#home" method="POST" data-login-form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                    <br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <br>
+                    <input type="submit" value="Login">
+                </form>
 
-            <form id="register_form" action="register.html" method="POST">
-                <input type="submit" value="Register">
-            </form>
+                <form id="register_form" action="" method="POST" data-register-btn>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+
+            <div data-register class='hide'>
+                <h1>Register</h1>
+                <form name="register_form" action="#home" method="POST" data-register-form>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <br>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                    <br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+
+                <form id="login_form" action="" method="POST" data-login-btn>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
         </div>
     </main>
 
