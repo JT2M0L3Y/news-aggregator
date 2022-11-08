@@ -40,12 +40,14 @@ fetch(url + '&apikey=' + key)
             articlesContainer.appendChild(article);
 
             return {
-                name: news.title,
+                title: news.title,
                 summary: news.content,
                 publisher: news.source_id,
                 element: article
             };
         })
+
+        console.log(articles);
     });
 
 /* Upper-center search js to search for content */
@@ -53,10 +55,14 @@ searchInput.addEventListener('keydown', (e) => {
     if (e.keyCode == 13) {
         const value = e.target.value;
 
-        articles.forEach(article => {
-            const isVisible = article.name.includes(value) ||
-                article.summary.includes(value) ||
-                article.publisher.includes(value);
+        articles.map(article => {
+            let isVisible = false;
+            if ((article.title != null && article.title.includes(value)) ||
+                (article.summary != null && article.summary.includes(value)) ||
+                (article.publisher != null && article.publisher.includes(value)))
+            {
+                isVisible = true;
+            }
 
             article.element.classList.toggle('hide', !isVisible);
         })
