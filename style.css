@@ -67,7 +67,8 @@ body {
     background-color: #4CAF50;
 }
 
-.articles {
+.articles,
+.list {
     display: flex;
     flex-direction: row;
     background-color: lightgrey;

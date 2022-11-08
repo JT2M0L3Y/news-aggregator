@@ -17,15 +17,7 @@ const key = 'pub_12841145b63adb79f8fb5cc26a075a97222a1';
 fetch(url + '&apikey=' + key)
     .then(res => res.json())
     .then(data => {
-        console.log(data);
-
         articles = data.results.map(news => {
-            const topic = topicTemplate.content.cloneNode(true).children[0];
-            topicsContainer.appendChild(topic);
-
-            const source = publisherTemplate.content.cloneNode(true).children[0];
-            publishersContainer.appendChild(source);
-
             const article = articleTemplate.content.cloneNode(true).children[0];
             const title = article.querySelector('[data-title]');
             const summary = article.querySelector('[data-summary]');
@@ -41,13 +33,11 @@ fetch(url + '&apikey=' + key)
 
             return {
                 title: news.title,
-                summary: news.content,
+                summary: news.description,
                 publisher: news.source_id,
                 element: article
             };
-        })
-
-        console.log(articles);
+        });
     });
 
 /* Upper-center search js to search for content */
@@ -57,6 +47,7 @@ searchInput.addEventListener('keydown', (e) => {
 
         articles.map(article => {
             let isVisible = false;
+
             if ((article.title != null && article.title.includes(value)) ||
                 (article.summary != null && article.summary.includes(value)) ||
                 (article.publisher != null && article.publisher.includes(value))) {
@@ -82,6 +73,9 @@ tabs.forEach(tab => {
         target.classList.remove('hide');
     });
 });
+
+/* js to add/remove articles from api result to list */
+const userList = document.getElementById()
 
 /*
 const loginForm = document.querySelector('[data-login-form]');
