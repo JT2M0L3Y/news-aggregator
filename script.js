@@ -85,6 +85,15 @@ tabs.forEach(tab => {
 });
 
 /* temporary 'login' sequence */
+const loginForm = document.querySelector('[data-login-form]');
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+        window.location.href = "index.html";
+    }
+})
+
 function validateForm() {
     var username = document.forms["login_form"]["username"].value;
     var password = document.forms["login_form"]["password"].value;
