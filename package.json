@@ -1,0 +1,24 @@
+{
+  "name": "cpsc-332-web-development-final-project-jt2m0l3y",
+  "version": "1.0.0",
+  "description": "Final Project Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GUWebDevelopment/cpsc-332-web-development-final-project-JT2M0L3Y.git"
+  },
+  "author": "Jonathan Smoley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GUWebDevelopment/cpsc-332-web-development-final-project-JT2M0L3Y/issues"
+  },
+  "homepage": "https://github.com/GUWebDevelopment/cpsc-332-web-development-final-project-JT2M0L3Y#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
