@@ -23,30 +23,33 @@ The goal here is to reduce online surfing time for web visitors to find what new
 <a name="install"></a>
 ### Installation
 
-Installation is the next section in an effective README. Tell other users how to install your project locally. 
-Optionally, include a gif to make the process even more clear for other people.
+Currently, there are no npm packages needed to run this project as it is just front-end development. 
+Also, I have included my API key to the news API I used. This key allows for 200 requests per day.
 
 <a name="use"></a>
 ### Usage
 
-The next section is usage, in which you instruct other people on how to use your project after they’ve installed 
-it. This would also be a good place to include screenshots of your project in action.
+At this moment, one of the important features of this project is the search bar (although it requires terms  
+listed among the articles that show up, which is a problem because most news provided by the API has been  
+random). The other important feature is the ability to add/remove articles with the 'My List' page. But,  
+this only works for adding individual articles.
+
+![image](https://user-images.githubusercontent.com/67881240/200466686-0f387052-8086-4605-bb57-09347a8b2500.png)
 
 <a name="cont"></a>
 ### Contributing
 
-Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. 
-Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers 
-know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for 
-setting guidelines for repository contributors.
+I currently have no expectations that others will contribute to this project.
 
 <a name="cred"></a>
 ### Credits
 
-Include a section for credits in order to highlight and link to the authors of your project.
+Contributors: 
+- JT2M0L3Y
 
 <a name="licence"></a>
 ### License
 
-Finally, include a section for the license of your project. For more information on choosing a license, 
-check out [GitHub’s licensing guide](https://choosealicense.com/)
+No license needed at this stage of development.
+
+[GitHub’s licensing guide](https://choosealicense.com/)
