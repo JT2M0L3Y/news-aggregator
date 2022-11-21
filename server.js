@@ -44,3 +44,34 @@ app.post('/views/privatelist.ejs', (req, res) => {
 
     res.render('privatelist.ejs');
 });
+
+/*
+    // server stuff
+    app.get("/text", (res, req) => {
+        // grabbing field from front end
+        console.log(req.query.someProperty);
+        // returning data to front end
+        res.json({anotherValue: "Hello", moredata: 42});
+    })
+
+    // ejs stuff
+    $(document).ready(() => {
+        $("#search").click(() => {
+            let reqData = {
+            someProperty: "hello, world",
+            multipleProps: "some val"
+            }
+
+            $.ajax({
+                url: "/text",
+                method: "GET",
+                data: reqData,
+                dataType: "json"
+            }).done((data) => {
+                // update text element
+                hide previously shown element
+                show previously hidden element
+            });
+        })
+    })
+*/
