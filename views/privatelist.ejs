@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <title>Compiled - List</title>
+</head>
+
+<body>
+    <header>
+        <div class="nav-bar">
+            <div class="title-container">
+                <p class="title">Compiled</p>
+            </div>
+
+            <div class="search-container">
+                <img src="media/search_icon.png" data-search-icon>
+                <input type="search" name="search" placeholder="Search articles" data-search-input>
+            </div>
+
+            <div class="tabs-container">
+                <ul class="tabs">
+                    <li data-tab-target="newslist.ejs" class="active tab">Articles</li>
+                    <li data-tab-target="privatelist.ejs" class="tab">My List</li>
+                    <li data-tab-target="#login" class="tab">Login</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="list" class="list hide" data-tab-content>
+            <div class="list-changes">
+                <!-- <h3>Sort</h3>
+                <div class="sort">
+                    <button class="sort-btn">Newest</button>
+                    <button class="sort-btn">Oldest</button>
+                </div>
+
+                <h3>Filter</h3>
+
+                <h4>Topic</h4>
+
+                <div data-topics>
+                    <template class="topic-filter" data-topic-template>
+                        <button class="topic-btn" data-topic>Label</button>
+                    </template>
+                </div>
+
+                <h4>Publisher</h4>
+
+                <div data-publishers>
+                    <template class="publisher-filter" data-publish-template>
+                        <button class="publish-btn" data-publish>Org.</button>
+                    </template>
+                </div> -->
+            </div>
+
+            <div class="scrollable" data-list-container>
+                <template data-list-template>
+                    <div class="item">
+                        <div data-title>No Title</div>
+                        <div data-summary>No Summary Provided</div>
+                        <div data-publisher>No Publisher Specified</div>
+                        <div class="choices">
+                            <a href="#" class="link" data-link>Read More</a>
+                            <button id="remove-topic" class="choice-btn">Remove Topic</button>
+                            <button id="remove-publish" class="choice-btn">Remove Publisher</button>
+                            <button class="choice-btn" data-remove-this>Remove This Article</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer"></div>
+    </footer>
+</body>
+
+</html>
