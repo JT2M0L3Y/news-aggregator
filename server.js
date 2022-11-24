@@ -1,10 +1,15 @@
 const mysql = require('mysql');
 const config = require('./config');
 const express = require('express');
+const session = require('express-session');
 const app = express();
 
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
 app.use(express.urlencoded({ extended: false }));
-
 app.use(express.static('public'));
 app.use(express.static('public/css'));
 app.use(express.static('public/media'));
