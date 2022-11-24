@@ -1,0 +1,403 @@
+/* body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-bar {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.title {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 0 5px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+[data-search-input] {
+    display: block;
+    font-size: 20px;
+    font: inherit;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+[data-search-input]:focus {
+    outline: none;
+}
+
+[data-search-icon] {
+    background-color: white;
+    width: 25px;
+    height: 25px;
+}
+
+.tabs-container {
+    padding: 0 10px;
+}
+
+.tabs li {
+    list-style: none;
+    display: inline-block;
+}
+
+.tab {
+    color: white;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background-color: #4CAF50;
+}
+
+.articles,
+.list {
+    display: flex;
+    flex-direction: row;
+    background-color: lightgrey;
+    height: 100vh;
+}
+
+.list-changes {
+    padding: 10px;
+    max-width: 15%;
+    min-width: 175px;
+    border-right: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-changes button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 10px;
+    font: inherit;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.scrollable {
+    padding: 20px;
+    flex: 1 1 70%;
+    overflow-y: scroll;
+}
+
+.item {
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.link {
+    text-decoration: none;
+    padding: 4px 9px;
+}
+
+.link:hover {
+    border: 1px dashed black;
+    border-radius: 10px;
+}
+
+.choice-btn {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    font: inherit;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.choice-btn:hover {
+    background-color: lightgrey;
+    color: #4CAF50;
+}
+
+.footer {
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+[data-feedback] {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+[data-feedback]:hover {
+    text-decoration: underline;
+}
+
+.dropbtn {
+    background: none;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn:hover {
+    text-decoration: underline;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    bottom: 100%;
+    z-index: 1;
+}
+
+.drop {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.drop:hover {
+    background-color: #4CAF50;
+}
+
+.dropup:hover .dropup-content {
+    display: block;
+}
+
+.hide {
+    display: none;
+} */
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-bar {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.title {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 0 5px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+[data-search-input] {
+    display: block;
+    font-size: 20px;
+    font: inherit;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+[data-search-input]:focus {
+    outline: none;
+}
+
+[data-search-icon] {
+    background-color: white;
+    width: 25px;
+    height: 25px;
+}
+
+.tabs-container {
+    padding: 0 10px;
+}
+
+.tabs li {
+    list-style: none;
+    display: inline-block;
+}
+
+.tab {
+    color: white;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background-color: #4CAF50;
+}
+
+.articles,
+.list {
+    display: flex;
+    flex-direction: row;
+    background-color: lightgrey;
+    height: 100vh;
+}
+
+.list-changes {
+    padding: 10px;
+    max-width: 15%;
+    min-width: 175px;
+    border-right: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-changes button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 10px;
+    font: inherit;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.scrollable {
+    padding: 20px;
+    flex: 1 1 70%;
+    overflow-y: scroll;
+}
+
+.item {
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.link {
+    text-decoration: none;
+    padding: 4px 9px;
+}
+
+.link:hover {
+    border: 1px dashed black;
+    border-radius: 10px;
+}
+
+.choice-btn {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    font: inherit;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.choice-btn:hover {
+    background-color: lightgrey;
+    color: #4CAF50;
+}
+
+.footer {
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+[data-feedback] {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+[data-feedback]:hover {
+    text-decoration: underline;
+}
+
+.dropbtn {
+    background: none;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn:hover {
+    text-decoration: underline;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    bottom: 100%;
+    z-index: 1;
+}
+
+.drop {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.drop:hover {
+    background-color: #4CAF50;
+}
+
+.dropup:hover .dropup-content {
+    display: block;
+}
+
+.hide {
+    display: none;
+}

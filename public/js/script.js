@@ -100,11 +100,6 @@ tabs.forEach(tab => {
     });
 });
 
-/* listener for color scheme buttons */
-// document.querySelector('[data-scheme-1]').addEventListener('click', () => {
-
-// })
-
 /*
 const loginForm = document.querySelector('[data-login-form]');
 const loginContainer = document.querySelector('[data-login]');

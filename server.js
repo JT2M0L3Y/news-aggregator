@@ -6,6 +6,8 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static('public'));
+app.use(express.static('public/media'));
+app.use(express.static('public/js'));
 
 app.set("view engine", "ejs");
 
@@ -18,7 +20,7 @@ con.connect((err) => {
     console.log("Connected to MySQL");
 });
 
-const sql = "SELECT * FROM pet";
+const sql = "SELECT * FROM Topics";
 con.query(sql, (err, res, fields) => {
     if (err) throw err;
     console.log(res);
