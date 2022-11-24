@@ -101,10 +101,6 @@ tabs.forEach(tab => {
     });
 });
 
-/* Upper-right logout js to switch pages */
-logoutTab.addEventListener('click', () => {
-    // go to login.html
-});
 
 /*
 const loginForm = document.querySelector('[data-login-form]');
