@@ -38,13 +38,6 @@ app.post('/views/newslist.ejs', (req, res) => {
     res.render('newslist.ejs');
 });
 
-app.post('/views/privatelist.ejs', (req, res) => {
-    // access MySQL database to private list of articles
-    console.log("POST request received");
-
-    res.render('privatelist.ejs');
-});
-
 /*
     // server stuff
     app.get("/text", (res, req) => {
