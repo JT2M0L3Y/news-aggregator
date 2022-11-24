@@ -9,6 +9,7 @@ const listTemplate = document.querySelector('[data-list-template]');
 const listContainer = document.querySelector('[data-list-container]');
 const searchInput = document.querySelector('[data-search-input]');
 const tabs = document.querySelectorAll('[data-tab-target]');
+const logoutTab = document.getElementById('logout-form');
 const tabContents = document.querySelectorAll('[data-tab-content]');
 
 let articles = [];
@@ -98,6 +99,11 @@ tabs.forEach(tab => {
         tab.classList.remove('hide');
         target.classList.remove('hide');
     });
+});
+
+/* Upper-right logout js to switch pages */
+logoutTab.addEventListener('click', () => {
+    // go to login.html
 });
 
 /*

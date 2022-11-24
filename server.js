@@ -28,16 +28,23 @@ con.query(sql, (err, res, fields) => {
 
 app.post('views/register.ejs', (req, res) => {
     // allow visitor to add account in database
-    console.log("POST request received");
+    console.log("Register POST request received");
 
     res.render('register.ejs');
 });
 
 app.post('/views/newslist.ejs', (req, res) => {
     // access MySQL database to get list of news
-    console.log("POST request received");
+    console.log("Home POST request received");
 
     res.render('newslist.ejs');
+});
+
+app.post('public/index.html', (req, res) => {
+    // send user back to login page
+    console.log("Login POST request received");
+
+    res.render('index.html');
 });
 
 /*

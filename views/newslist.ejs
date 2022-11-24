@@ -232,7 +232,11 @@
                 <ul class="tabs">
                     <li data-tab-target="#articles" class="active tab">Articles</li>
                     <li data-tab-target="#list" class="tab">My List</li>
-                    <li data-tab-target="index.html" class="tab">Logout</li>
+                    <li class="tab">
+                        <form id="logout-form" action="/public/index.html" method="POST">
+                            Logout
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
