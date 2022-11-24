@@ -28,7 +28,7 @@ con.query(sql, (err, res, fields) => {
     console.log(res);
 });
 
-app.post('/views/register.ejs', (req, res) => {
+app.post('/register', (req, res) => {
     // allow visitor to add account in database
     console.log("Register POST request received");
 
@@ -42,7 +42,7 @@ app.post('/views/home.ejs', (req, res) => {
     res.render('home.ejs');
 });
 
-app.post('/public/index', (req, res) => {
+app.post('/createAccount', (req, res) => {
     // send user back to login page
     console.log("Login POST request received");
 

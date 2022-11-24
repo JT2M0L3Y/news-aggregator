@@ -12,22 +12,26 @@
     <div class="main-container">
         <h1>Register</h1>
         <div class="forms-container">
-            <form action="/public/index" method="POST">
+            <form action="/createAccount" method="POST">
                 <div class="input-div">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                    <label for="first">First Name:</label>
+                    <input type="text" name="first" id="first" placeholder="Enter first name">
                 </div>
                 <div class="input-div">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                    <label for="last">Last Name:</label>
+                    <input type="text" name="last" id="last" placeholder="Enter last name">
                 </div>
                 <div class="input-div">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" placeholder="Enter your username">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter email">
                 </div>
                 <div class="input-div">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Enter your password">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username">
+                </div>
+                <div class="input-div">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Enter password">
                 </div>
                 <div class="input-div">
                     <input type="submit" name="submit" value="Register">

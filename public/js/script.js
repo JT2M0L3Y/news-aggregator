@@ -1,8 +1,9 @@
 /* API request & dynamic js for articles  */
-const topicTemplate = document.querySelector('[data-topic-template]');
-const topicsContainer = document.querySelector('[data-topics]');
-const publisherTemplate = document.querySelector('[data-publish-template]');
-const publishersContainer = document.querySelector('[data-publishers]');
+// const topicTemplate = document.querySelector('[data-topic-template]');
+// const topicsContainer = document.querySelector('[data-topics]');
+// const publisherTemplate = document.querySelector('[data-publish-template]');
+// const publishersContainer = document.querySelector('[data-publishers]');
+
 const articleTemplate = document.querySelector('[data-article-template]');
 const articlesContainer = document.querySelector('[data-articles-container]');
 const listTemplate = document.querySelector('[data-list-template]');
@@ -101,50 +102,28 @@ tabs.forEach(tab => {
     });
 });
 
+/* Do jQuery/.ajax() stuff for grabbing data from server.js */
+// // ejs stuff
+// $(document).ready(() => {
+//     $("#search").click(() => {
+//         let reqData = {
+//             someProperty: "hello, world",
+//             multipleProps: "some val"
+//         }
 
-/*
-const loginForm = document.querySelector('[data-login-form]');
-const loginContainer = document.querySelector('[data-login]');
-const registerButton = document.querySelector('[data-register-btn]');
+//         $.ajax({
+//             url: "/text",
+//             method: "GET",
+//             data: reqData,
+//             dataType: "json"
+//         }).done((data) => {
+//                 // update text element
+//                 hide previously shown element
+//                 show previously hidden element
+//         });
+//     })
+// })
 
-loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-        window.location.href = "index.html";
-    }
-})
-
-registerButton.addEventListener('click', () => { 
-    loginContainer.classList.add('hide');
-    registerContainer.classList.remove('hide');
-});
-
-function validateForm() {
-    var username = document.forms["login_form"]["username"].value;
-    var password = document.forms["login_form"]["password"].value;
-    if (username === "user" && password === "pass") {
-        return true;
-    } else {
-        alert("Username and password must be filled out");
-        return false;
-    }
-}
-
-
-const registerForm = document.querySelector('[data-register-form]');
-const registerContainer = document.querySelector('[data-register]');
-const loginButton = document.querySelector('[data-login-btn]');
-
-registerForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // if () {
-    //     window.location.href = "index.html";
-    // }
-});
-
-loginButton.addEventListener('click', () => { 
-    registerContainer.classList.add('hide');
-    loginContainer.classList.remove('hide');
-});
-
-*/
+// $(document).ready(() => {
+//     $('[data-topic-template]')
+// });
