@@ -20,27 +20,28 @@ con.connect((err) => {
     console.log("Connected to MySQL");
 });
 
-const sql = "SELECT * FROM Topics";
+// testing that the server is working
+const sql = "SELECT * FROM Users";
 con.query(sql, (err, res, fields) => {
     if (err) throw err;
     console.log(res);
 });
 
-app.post('views/register.ejs', (req, res) => {
+app.post('/views/register.ejs', (req, res) => {
     // allow visitor to add account in database
     console.log("Register POST request received");
 
     res.render('register.ejs');
 });
 
-app.post('/views/newslist.ejs', (req, res) => {
+app.post('/views/home.ejs', (req, res) => {
     // access MySQL database to get list of news
     console.log("Home POST request received");
 
-    res.render('newslist.ejs');
+    res.render('home.ejs');
 });
 
-app.post('public/index.html', (req, res) => {
+app.post('/public/index', (req, res) => {
     // send user back to login page
     console.log("Login POST request received");
 
