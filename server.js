@@ -40,11 +40,39 @@ app.post('/register', (req, res) => {
     res.render('register.ejs');
 });
 
-app.post('/views/home.ejs', (req, res) => {
-    // access MySQL database to get list of news
+app.post('/authenticate', (req, res) => {
+    // authenticate user login
     console.log("Home POST request received");
 
-    res.render('home.ejs');
+    let username = req.body.username;
+    let password = req.body.password;
+
+    if (username && password) {
+        con.query('SELECT * FROM Users WHERE username = ? AND password = ?',
+            [username, password], (err, results) => {
+                if (err) throw err;
+
+                if (results.length > 0) {
+                    req.session.loggedin = true;
+                    req.session.username = username;
+                    res.redirect('/views/home.ejs');
+                } else {
+                    res.send('Incorrect Username and/or Password!');
+                }
+            })
+    } else {
+        res.send('Please enter Username and Password!');
+        res.end();
+    }
+
+    // res.render('home.ejs');
+}).get('/views/home.ejs', (req, res) => {
+    if (req.session.loggedin) {
+        res.render('home.ejs', { username: req.session.username });
+    } else {
+        res.send('Please login to view this page!');
+    }
+    res.end();
 });
 
 app.post('/createAccount', (req, res) => {
