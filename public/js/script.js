@@ -15,58 +15,58 @@ const tabContents = document.querySelectorAll('[data-tab-content]');
 
 let articles = [];
 
-const url = 'https://newsdata.io/api/1/news?language=en';
-const key = 'pub_12841145b63adb79f8fb5cc26a075a97222a1';
+// const url = 'https://newsdata.io/api/1/news?language=en';
+// const key = 'pub_12841145b63adb79f8fb5cc26a075a97222a1';
 
-fetch(url + '&apikey=' + key)
-    .then(res => res.json())
-    .then(data => {
-        articles = data.results.map(news => {
-            let article = articleTemplate.content.cloneNode(true).children[0];
-            let title = article.querySelector('[data-title]');
-            let summary = article.querySelector('[data-summary]');
-            let publisher = article.querySelector('[data-publisher]');
-            let link = article.querySelector('[data-link]');
+// fetch(url + '&apikey=' + key)
+//     .then(res => res.json())
+//     .then(data => {
+//         articles = data.results.map(news => {
+//             let article = articleTemplate.content.cloneNode(true).children[0];
+//             let title = article.querySelector('[data-title]');
+//             let summary = article.querySelector('[data-summary]');
+//             let publisher = article.querySelector('[data-publisher]');
+//             let link = article.querySelector('[data-link]');
 
-            // create new article element
-            title.textContent = news.title;
-            summary.textContent = news.description;
-            publisher.textContent = news.source_id;
-            link.href = news.link;
+//             // create new article element
+//             title.textContent = news.title;
+//             summary.textContent = news.description;
+//             publisher.textContent = news.source_id;
+//             link.href = news.link;
 
-            // event listeners for adding/removing individual articles
-            let addThis = article.querySelector('[data-add-this]');
-            addThis.addEventListener('click', () => {
-                // if clicked, add new articles in list
-                let newListing = listTemplate.content.cloneNode(true).children[0];
-                let title = newListing.querySelector('[data-title]');
-                let summary = newListing.querySelector('[data-summary]');
-                let publisher = newListing.querySelector('[data-publisher]');
-                let link = newListing.querySelector('[data-link]');
-                title.textContent = news.title;
-                summary.textContent = news.description;
-                publisher.textContent = news.source_id;
-                link.href = news.link;
-                listContainer.appendChild(newListing);
+//             // event listeners for adding/removing individual articles
+//             let addThis = article.querySelector('[data-add-this]');
+//             addThis.addEventListener('click', () => {
+//                 // if clicked, add new articles in list
+//                 let newListing = listTemplate.content.cloneNode(true).children[0];
+//                 let title = newListing.querySelector('[data-title]');
+//                 let summary = newListing.querySelector('[data-summary]');
+//                 let publisher = newListing.querySelector('[data-publisher]');
+//                 let link = newListing.querySelector('[data-link]');
+//                 title.textContent = news.title;
+//                 summary.textContent = news.description;
+//                 publisher.textContent = news.source_id;
+//                 link.href = news.link;
+//                 listContainer.appendChild(newListing);
 
-                // add event listener to remove button
-                let removeThis = newListing.querySelector('[data-remove-this]');
-                removeThis.addEventListener('click', () => {
-                    newListing.remove();
-                });
-            });
+//                 // add event listener to remove button
+//                 let removeThis = newListing.querySelector('[data-remove-this]');
+//                 removeThis.addEventListener('click', () => {
+//                     newListing.remove();
+//                 });
+//             });
 
-            articlesContainer.appendChild(article);
+//             articlesContainer.appendChild(article);
 
-            // return set for search bar
-            return {
-                title: news.title,
-                summary: news.description,
-                publisher: news.source_id,
-                element: article
-            };
-        });
-    });
+//             // return set for search bar
+//             return {
+//                 title: news.title,
+//                 summary: news.description,
+//                 publisher: news.source_id,
+//                 element: article
+//             };
+//         });
+//     });
 
 /* Upper-center search js to search for content */
 // searchInput.addEventListener('keydown', (e) => {

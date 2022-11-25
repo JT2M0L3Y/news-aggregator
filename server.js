@@ -41,7 +41,7 @@ app.post('/register', (req, res) => {
 });
 
 app.post('/authenticate', (req, res) => {
-    // authenticate user login
+    // authenticate user login credentials
     console.log("Home POST request received");
 
     let username = req.body.username;
@@ -64,9 +64,8 @@ app.post('/authenticate', (req, res) => {
         res.send('Please enter Username and Password!');
         res.end();
     }
-
-    // res.render('home.ejs');
 }).get('/views/home.ejs', (req, res) => {
+    // if user is logged in, redirect to home page
     if (req.session.loggedin) {
         res.render('home.ejs', { username: req.session.username });
     } else {
