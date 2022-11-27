@@ -74,37 +74,31 @@ app.post('/authenticate', (req, res) => {
     res.end();
 });
 
-app.post('/createAccount', (req, res) => {
-    // send user back to login page
+app.get('/createAccount', (req, res) => {
     console.log("Login POST request received");
 
-    // res.redirect('index.html');
-}).get('/createAccount', (req, res) => {
-    // insert new user into database
-    console.log("Login GET request received");
+    let first = req.query.first;
+    let last = req.query.last;
+    let email = req.query.email;
+    let username = req.query.username;
+    let password = req.query.password;
 
-    let first = req.body.first;
-    let last = req.body.last;
-    let email = req.body.email;
-    let username = req.body.username;
-    let password = req.body.password;
-    
     if (first && last && email && username && password) {
-        con.query('INSERT INTO Users (first, last, email, username, password) VALUES (?, ?, ?, ?, ?)',
-            [first, last, email, username, password], (err, results) => {
-                if (err) throw err;
-
-                if (results.length > 0) {
-                    req.session.loggedin = true;
-                    req.session.username = username;
-                    // res.redirect('/views/home.ejs');
-                    res.redirect('index.html');
-                } else {
-                    res.send('Incorrect Username and/or Password!');
-                }
-            })
+        con.query('INSERT INTO Users VALUES (?, ?, ?, ?, ?)',
+            [username, password, email, first, last], (err, results) => {
+            if (err) throw err;
+            if (results != null) {
+                req.session.loggedin = true;
+                req.session.username = username;
+                // go back to login page
+                res.redirect('index.html');
+            } else {
+                res.send('Insufficient Username and/or Password!');
+            }
+        })
+        console.log("Account created");
     } else {
-        res.send('Please enter Username and Password!');
+        res.send('Please enter something for all fields!');
         res.end();
     }
 });
@@ -114,6 +108,8 @@ app.post('/logout', (req, res) => {
     console.log("Logout POST request received");
 
     req.session.destroy();
+    console.log("Session destroyed");
+
     res.redirect('index.html');
 });
 
