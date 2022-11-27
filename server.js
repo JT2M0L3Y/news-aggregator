@@ -33,16 +33,9 @@ con.query(sql, (err, res, fields) => {
     console.log(res);
 });
 
-app.post('/register', (req, res) => {
-    // allow visitor to add account in database
-    console.log("Register POST request received");
-
-    res.render('register.ejs');
-});
-
 app.post('/authenticate', (req, res) => {
     // authenticate user login credentials
-    console.log("Home POST request received");
+    console.log("Login POST request received");
 
     let username = req.body.username;
     let password = req.body.password;
@@ -54,7 +47,7 @@ app.post('/authenticate', (req, res) => {
 
                 if (results.length > 0) {
                     req.session.loggedin = true;
-                    req.session.username = username;
+                    req.session.userId = username;
                     res.redirect('/views/home.ejs');
                 } else {
                     res.send('Incorrect Username and/or Password!');
@@ -64,44 +57,59 @@ app.post('/authenticate', (req, res) => {
         res.send('Please enter Username and Password!');
         res.end();
     }
-}).get('/views/home.ejs', (req, res) => {
-    // if user is logged in, redirect to home page
-    if (req.session.loggedin) {
-        res.render('home.ejs', { username: req.session.username });
-    } else {
-        res.send('Please login to view this page!');
-    }
-    res.end();
-});
-
-app.get('/createAccount', (req, res) => {
-    console.log("Login POST request received");
-
-    let first = req.query.first;
-    let last = req.query.last;
-    let email = req.query.email;
-    let username = req.query.username;
-    let password = req.query.password;
-
-    if (first && last && email && username && password) {
-        con.query('INSERT INTO Users VALUES (?, ?, ?, ?, ?)',
-            [username, password, email, first, last], (err, results) => {
-            if (err) throw err;
-            if (results != null) {
-                req.session.loggedin = true;
-                req.session.username = username;
-                // go back to login page
-                res.redirect('index.html');
-            } else {
-                res.send('Insufficient Username and/or Password!');
-            }
-        })
-        console.log("Account created");
-    } else {
-        res.send('Please enter something for all fields!');
+})
+    .get('/views/home.ejs', (req, res) => {
+        // if user is logged in, redirect to home page
+        if (req.session.loggedin) {
+            console.log("Home GET request received");
+            res.render('home.ejs', { username: req.session.username });
+        } else {
+            res.send('Please login to view this page!');
+        }
         res.end();
-    }
-});
+    });
+
+app.post('/register', (req, res) => {
+    // allow visitor to add account in database
+    console.log("Register POST request received");
+
+    res.render('register.ejs');
+})
+    .get('/createAccount', (req, res) => {
+        console.log("Login POST request received");
+
+        let first = req.query.first;
+        let last = req.query.last;
+        let email = req.query.email;
+        let username = req.query.username;
+        let password = req.query.password;
+
+        if (first && last && email && username && password) {
+            con.query('INSERT INTO Users VALUES (?, ?, ?, ?, ?)',
+                [username, password, email, first, last], (err, results) => {
+                    if (err) throw err;
+                    if (results != null) {
+                        req.session.loggedin = true;
+                        req.session.username = username;
+                        // go back to login page
+                        res.redirect('index.html');
+                    } else {
+                        res.send('Insufficient Username and/or Password!');
+                    }
+                })
+            console.log("Account created");
+        } else {
+            res.send('Please enter something for all fields!');
+            res.end();
+        }
+    });
+
+app.post('/', (req, res) => {
+    // allow visitor to login to their account
+    console.log("Already have account POST request received");
+
+    res.redirect('index.html');
+})
 
 app.post('/logout', (req, res) => {
     // log out of user account/end session

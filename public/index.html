@@ -66,7 +66,8 @@
             border-radius: 5px;
         }
 
-        #form-btn {
+        #submit-btn,
+        #register-btn {
             margin-top: 10px;
             padding: 10px;
             border: none;
@@ -77,7 +78,8 @@
             cursor: pointer;
         }
 
-        #form-btn:hover {
+        #submit-btn:hover,
+        #register-btn:hover {
             background-color: white;
             color: green;
         }
@@ -103,11 +105,11 @@
                     </tr>
                 </table>
 
-                <input type="submit" value="Login" id="form-btn">
+                <input type="submit" value="Login" id="submit-btn">
             </form>
 
             <form action="/register" method="POST">
-                <input id="form-btn" type="submit" value="Register">
+                <input id="register-btn" type="submit" value="Register">
             </form>
         </div>
     </div>
