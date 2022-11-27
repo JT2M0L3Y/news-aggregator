@@ -26,13 +26,7 @@ con.connect((err) => {
     console.log("Connected to MySQL");
 });
 
-// testing that the server is working
-const sql = "SELECT * FROM Users";
-con.query(sql, (err, res, fields) => {
-    if (err) throw err;
-    console.log(res);
-});
-
+// path(s) for user login and redirect to home page
 app.post('/authenticate', (req, res) => {
     // authenticate user login credentials
     console.log("Login POST request received");
@@ -69,6 +63,7 @@ app.post('/authenticate', (req, res) => {
         res.end();
     });
 
+// path(s) for user registration and redirect to login page
 app.post('/register', (req, res) => {
     // allow visitor to add account in database
     console.log("Register POST request received");
@@ -104,6 +99,7 @@ app.post('/register', (req, res) => {
         }
     });
 
+// path for user pressing login on register page
 app.post('/', (req, res) => {
     // allow visitor to login to their account
     console.log("Already have account POST request received");
@@ -111,6 +107,7 @@ app.post('/', (req, res) => {
     res.redirect('index.html');
 })
 
+// path for user pressing logout on home page
 app.post('/logout', (req, res) => {
     // log out of user account/end session
     console.log("Logout POST request received");
@@ -119,6 +116,38 @@ app.post('/logout', (req, res) => {
     console.log("Session destroyed");
 
     res.redirect('index.html');
+});
+
+// path for user loading the articles tab on home page
+app.post('/articles', (req, res) => {
+    // load articles tab
+    console.log("Articles POST request received");
+
+    // get articles from database
+    con.query('SELECT * FROM Articles', (err, results) => {
+        if (err) throw err;
+        if (results != null) {
+            res.render('articles.ejs', { articles: results });
+        } else {
+            res.send('No articles found!');
+        }
+    })
+});
+
+// path for user loading the list tab on home page
+app.post('/list', (req, res) => {
+    // load list tab
+    console.log("List POST request received");
+
+    // get list from database
+    con.query('SELECT * FROM ListItem JOIN Articles USING (article_id)', (err, results) => {
+        if (err) throw err;
+        if (results != null) {
+            res.render('list.ejs', { list: results });
+        } else {
+            res.send('No list found!');
+        }
+    })
 });
 
 /*
