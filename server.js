@@ -78,7 +78,43 @@ app.post('/createAccount', (req, res) => {
     // send user back to login page
     console.log("Login POST request received");
 
-    res.render('index.html');
+    // res.redirect('index.html');
+}).get('/createAccount', (req, res) => {
+    // insert new user into database
+    console.log("Login GET request received");
+
+    let first = req.body.first;
+    let last = req.body.last;
+    let email = req.body.email;
+    let username = req.body.username;
+    let password = req.body.password;
+    
+    if (first && last && email && username && password) {
+        con.query('INSERT INTO Users (first, last, email, username, password) VALUES (?, ?, ?, ?, ?)',
+            [first, last, email, username, password], (err, results) => {
+                if (err) throw err;
+
+                if (results.length > 0) {
+                    req.session.loggedin = true;
+                    req.session.username = username;
+                    // res.redirect('/views/home.ejs');
+                    res.redirect('index.html');
+                } else {
+                    res.send('Incorrect Username and/or Password!');
+                }
+            })
+    } else {
+        res.send('Please enter Username and Password!');
+        res.end();
+    }
+});
+
+app.post('/logout', (req, res) => {
+    // log out of user account/end session
+    console.log("Logout POST request received");
+
+    req.session.destroy();
+    res.redirect('index.html');
 });
 
 /*
