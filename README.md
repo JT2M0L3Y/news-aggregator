@@ -11,20 +11,40 @@ The goal here is to reduce online surfing time for web visitors to find what new
 
 <a name="table"></a>
 ### Table of Contents
-* [Project Name](#title)
-* [Description](#desc)
-* [Table of Contents](#table)
-* [Installation](#install)
-* [Usage](#use)
-* [Contributing](#cont)
-* [Credits](#cred)
-* [License](#license)
+- [README](#readme)
+  - [News Compilation Website](#news-compilation-website)
+    - [Description](#description)
+    - [Table of Contents](#table-of-contents)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Contributing](#contributing)
+    - [Credits](#credits)
+    - [License](#license)
 
 <a name="install"></a>
 ### Installation
 
-Currently, there are no npm packages needed to run this project as it is just front-end development. 
-Also, I have included my API key to the news API I used. This key allows for 200 requests per day.
+To run this web app, one must initialize a NodeJS environment.  
+
+Within this environment there are a few packages that are required:
+* express
+* express-session
+* ejs
+* mysql
+
+This project uses a MySQL database. As such, I have included a pair of SQL scripts to be used in populating a MySQL database. The host server I use to access this database is Gonzaga's dedicated MySQL server.
+
+To configure one's database connection, a config.json file is required that contains:
+```
+{
+    "host": "desired server",
+    "user": "your username",
+    "password": "your password",
+    "database": "your database"
+}
+```
+
+Also, I have included my API key to the news API I used. This key allows for 200 requests per day. Because the articles cannot yet be queried from the database, I have kept the API call for the present deliverable.
 
 <a name="use"></a>
 ### Usage
