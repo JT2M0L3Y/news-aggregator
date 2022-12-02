@@ -124,8 +124,9 @@ app.post('/articles', (req, res) => {
     console.log("Articles POST request received");
 
     // get articles from database
-    con.query('SELECT * FROM Articles', (err, results) => {
+    con.query('SELECT * FROM Articles', (err, results, fields) => {
         if (err) throw err;
+        else console.log(fields);
         if (results != null) {
             res.render('articles.ejs', { articles: results });
         } else {
@@ -140,8 +141,9 @@ app.post('/list', (req, res) => {
     console.log("List POST request received");
 
     // get list from database
-    con.query('SELECT * FROM ListItem JOIN Articles USING (article_id)', (err, results) => {
+    con.query('SELECT * FROM ListItem JOIN Articles USING (article_id)', (err, results, fields) => {
         if (err) throw err;
+        else console.log(fields);
         if (results != null) {
             res.render('list.ejs', { list: results });
         } else {
