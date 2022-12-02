@@ -49,10 +49,7 @@ Also, I have included my API key to the news API I used. This key allows for 200
 <a name="use"></a>
 ### Usage
 
-At this moment, one of the important features of this project is the search bar (although it requires terms  
-listed among the articles that show up, which is a problem because most news provided by the API has been  
-random). The other important feature is the ability to add/remove articles with the 'My List' page. But,  
-this only works for adding individual articles.
+At this moment, one of the important features of this project is the search bar (although it requires terms listed among the articles that show up, which is a problem because most news provided by the API has been random). The other important feature is the ability to add/remove articles with the 'My List' page. But, this only works for adding individual articles.
 
 ![image](https://user-images.githubusercontent.com/67881240/200466686-0f387052-8086-4605-bb57-09347a8b2500.png)
 
