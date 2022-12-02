@@ -6,14 +6,145 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compiled - Register</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: green;
+        }
+
+        .main-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: black;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .forms-container {
+            width: 65%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: black;
+            color: white;
+            box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.5);
+            border: white;
+            border-style: ridge;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #login-form td {
+            padding: 5px;
+        }
+
+        .forms-container label {
+            font-size: medium;
+        }
+
+        .forms-container input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .redirect-container {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+        }
+
+        #hint {
+            margin-right: 10px;
+            font-size: medium;
+        }
+
+        #login-btn,
+        #register-btn {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background-color: green;
+            color: white;
+            cursor: pointer;
+        }
+
+        #login-btn:hover,
+        #register-btn:hover {
+            background-color: white;
+            color: green;
+        }
+    </style>
 </head>
 
 <body>
     <div class="main-container">
         <h1>Register</h1>
         <div class="forms-container">
-            <form action="/createAccount" method="GET">
-                <div class="input-div">
+            <form id="login-form" action="/createAccount" method="GET">
+                <table id="login-table">
+                    <tr>
+                        <td><label for="first">First Name:</label></td>
+                        <td>
+                            <input type="text" name="first" id="first" required
+                                autocomplete="First Name" placeholder="Enter first name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="last">Last Name:</label></td>
+                        <td>
+                            <input type="text" name="last" id="last" required
+                                autocomplete="Last Name" placeholder="Enter last name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td>
+                            <input type="email" name="email" id="email" required
+                                autocomplete="fake@email.com" placeholder="Enter email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="username">Username:</label></td>
+                        <td>
+                            <input type="text" name="username" id="username" required
+                                autocomplete="user" placeholder="Enter username">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td>
+                            <input type="password" name="password" id="password" required
+                                autocomplete="1" placeholder="Enter password">
+                        </td>
+                    </tr>
+                </table>
+                <!-- <div class="input-div">
                     <label for="first">First Name:</label>
                     <input type="text" name="first" id="first" placeholder="Enter first name">
                 </div>
@@ -35,14 +166,20 @@
                 </div>
                 <div class="input-div">
                     <input type="submit" name="submit" value="Register">
+                </div> -->
+
+                <input id="register-btn" type="submit" name="submit" value="Register">
+            </form>
+
+            <form id="to-login" action="/" method="POST">
+                <div class="redirect-container">
+                    <p id="hint">Already have an account?</p>
+                    <input id="login-btn" type="submit" name="exists" value="Login">
                 </div>
-            </form> 
+            </form>
         </div>
-        <form action="/" method="POST">
-                <div>
-                    <p>Already have an account? <input type="submit" name="exists" value="Login"></p>
-                </div>
-        </form>
+
+        
     </div>
 </body>
 
