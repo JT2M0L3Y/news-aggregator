@@ -123,12 +123,14 @@ app.post('/articles', (req, res) => {
     // load articles tab
     console.log("Articles POST request received");
 
+    sql = 'SELECT * '
+    sql += 'FROM ListItem JOIN Articles USING(article_Id);'
+
     // get articles from database
-    con.query('SELECT * FROM Articles', (err, results, fields) => {
+    con.query(sql, (err, results) => {
         if (err) throw err;
-        else console.log(fields);
         if (results != null) {
-            res.render('articles.ejs', { articles: results });
+            res.render('home.ejs', { articles: results });
         } else {
             res.send('No articles found!');
         }
@@ -140,12 +142,15 @@ app.post('/list', (req, res) => {
     // load list tab
     console.log("List POST request received");
 
+    sql = 'SELECT * '
+    sql += 'FROM ListItem JOIN Articles USING(article_Id) '
+    sql += 'WHERE username = ?';
+
     // get list from database
-    con.query('SELECT * FROM ListItem JOIN Articles USING (article_id)', (err, results, fields) => {
+    con.query(sql, [req.session.userId], (err, results) => {
         if (err) throw err;
-        else console.log(fields);
         if (results != null) {
-            res.render('list.ejs', { list: results });
+            res.render('home.ejs', { list: results });
         } else {
             res.send('No list found!');
         }
