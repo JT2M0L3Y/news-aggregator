@@ -129,7 +129,7 @@ app.get('/articles', (req, res) => {
     con.query(sql, (err, results) => {
         if (err) throw err;
         if (results != null) {
-            res.json(results);
+            res.render('home.ejs', results);
         } else {
             res.send('No articles found!');
         }
@@ -149,7 +149,7 @@ app.get('/list', (req, res) => {
     con.query(sql, [req.session.userId], (err, results) => {
         if (err) throw err;
         if (results != null) {
-            res.json(results);
+            res.render('home.ejs', results);
         } else {
             res.send('No list found!');
         }

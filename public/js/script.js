@@ -115,7 +115,51 @@ $(document).ready(() => {
             data: { articles: articles },
             dataType: 'json'
         }).done((data) => {
-            console.log(data.articles);
+            // console.log(data.articles);
+
+            // let article = articleTemplate.content.cloneNode(true).children[0];
+            // let title = article.querySelector('[data-title]');
+            // let summary = article.querySelector('[data-summary]');
+            // let publisher = article.querySelector('[data-publisher]');
+            // let link = article.querySelector('[data-link]');
+
+            // // create new article element
+            // title.textContent = data.articles.title;
+            // summary.textContent = data.articles.description;
+            // publisher.textContent = data.articles.publisher;
+            // link.href = data.articles.url;
+
+            // // event listeners for adding/removing individual articles
+            // let addThis = article.querySelector('[data-add-this]');
+            // addThis.addEventListener('click', () => {
+            //     // if clicked, add new articles in list
+            //     let newListing = listTemplate.content.cloneNode(true).children[0];
+            //     let title = newListing.querySelector('[data-title]');
+            //     let summary = newListing.querySelector('[data-summary]');
+            //     let publisher = newListing.querySelector('[data-publisher]');
+            //     let link = newListing.querySelector('[data-link]');
+            //     title.textContent = data.articles.title;
+            //     summary.textContent = data.articles.description;
+            //     publisher.textContent = data.articles.publisher;
+            //     link.href = data.articles.url;
+            //     listContainer.appendChild(newListing);
+
+            //     // add event listener to remove button
+            //     let removeThis = newListing.querySelector('[data-remove-this]');
+            //     removeThis.addEventListener('click', () => {
+            //         newListing.remove();
+            //     });
+            // });
+
+            // articlesContainer.appendChild(article);
+
+            // // return set for search bar
+            // return {
+            //     title: news.title,
+            //     summary: news.description,
+            //     publisher: news.source_id,
+            //     element: article
+            // };
         })
     });
 
@@ -126,7 +170,8 @@ $(document).ready(() => {
             data: { list: list },
             dataType: 'json'
         }).done((data) => {
-            console.log(data.list);
+            // console.log(data.list);
+            
         })
     });
 });
