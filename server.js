@@ -119,18 +119,17 @@ app.post('/logout', (req, res) => {
 });
 
 // path for user loading the articles tab on home page
-app.post('/articles', (req, res) => {
+app.get('/articles', (req, res) => {
     // load articles tab
     console.log("Articles POST request received");
 
-    sql = 'SELECT * '
-    sql += 'FROM ListItem JOIN Articles USING(article_Id);'
+    sql = 'SELECT * FROM Articles;'
 
     // get articles from database
     con.query(sql, (err, results) => {
         if (err) throw err;
         if (results != null) {
-            res.render('home.ejs', { articles: results });
+            res.json(results);
         } else {
             res.send('No articles found!');
         }
@@ -138,7 +137,7 @@ app.post('/articles', (req, res) => {
 });
 
 // path for user loading the list tab on home page
-app.post('/list', (req, res) => {
+app.get('/list', (req, res) => {
     // load list tab
     console.log("List POST request received");
 
@@ -150,7 +149,7 @@ app.post('/list', (req, res) => {
     con.query(sql, [req.session.userId], (err, results) => {
         if (err) throw err;
         if (results != null) {
-            res.render('home.ejs', { list: results });
+            res.json(results);
         } else {
             res.send('No list found!');
         }

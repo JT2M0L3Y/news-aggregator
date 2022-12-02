@@ -87,6 +87,11 @@ searchInput.addEventListener('keydown', (e) => {
     }
 });
 
+let $articlesTab = $('#articles-tab');
+let $articlesContent = $('#articles');
+let $listTab = $('#list-tab');
+let $listContent = $('#list');
+
 $(document).ready(() => {
     /* Upper-right tabs js to switch pages */
     tabs.forEach(tab => {
@@ -101,6 +106,28 @@ $(document).ready(() => {
             tab.classList.remove('hide');
             target.classList.remove('hide');
         });
+    });
+
+    $articlesTab.click(() => {
+        $.ajax({
+            url: '/articles',
+            method: 'GET',
+            data: { articles: articles },
+            dataType: 'json'
+        }).done((data) => {
+            console.log(data.articles);
+        })
+    });
+
+    $listTab.click(() => {
+        $.ajax({
+            url: '/list',
+            method: 'GET',
+            data: { list: list },
+            dataType: 'json'
+        }).done((data) => {
+            console.log(data.list);
+        })
     });
 });
 
