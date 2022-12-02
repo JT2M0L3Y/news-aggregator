@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const config = require('./config');
 const express = require('express');
 const session = require('express-session');
+const validator = require('mysql-validator');
 const app = express();
 
 app.use(session({
@@ -31,9 +32,29 @@ app.post('/authenticate', (req, res) => {
     // authenticate user login credentials
     console.log("Login POST request received");
 
+    let types = [];
+
     let username = req.body.username;
     let password = req.body.password;
 
+    // validation attempt
+    // con.query('DESCRIBE Users', (err, result) => {
+    //     if (err) throw err;
+    //     // get table attribute types/sizes
+    //     for (let i = 0; i < result.length; i++) {
+    //         types.push(result[i].Type);
+    //     }
+    // })
+
+    // var userErr = validator.check(username, types[0]);
+    // var passErr = validator.check(password, types[1]);
+
+    // if (userErr) {
+    //     res.send('Validator failed on username!');
+    //     res.end();
+    // } else if (passErr) {
+    //     res.send('Validator failed on password!');
+    //     res.end();
     if (username && password) {
         con.query('SELECT * FROM Users WHERE username = ? AND password = ?',
             [username, password], (err, results) => {
@@ -58,7 +79,7 @@ app.post('/authenticate', (req, res) => {
             console.log("Home GET request received");
             res.render('home.ejs', { username: req.session.username });
         } else {
-            res.send('Please login to view this page!');
+            res.redirect('../index.html');
         }
         res.end();
     });
@@ -81,7 +102,7 @@ app.post('/register', (req, res) => {
 
         if (first && last && email && username && password) {
             con.query('INSERT INTO Users VALUES (?, ?, ?, ?, ?)',
-                [username, password, email, first, last], (err, results) => {
+                [username, password, email.normalizeEmail(), first.trim(), last.trim()], (err, results) => {
                     if (err) throw err;
                     if (results != null) {
                         req.session.loggedin = true;

@@ -31,6 +31,7 @@ Within this environment there are a few packages that are required:
 * express-session
 * ejs
 * mysql
+* mysql-validator
 
 This project uses a MySQL database. As such, I have included a pair of SQL scripts to be used in populating a MySQL database. The host server I use to access this database is Gonzaga's dedicated MySQL server.
 
