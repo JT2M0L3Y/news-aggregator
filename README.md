@@ -11,15 +11,11 @@ The goal here is to reduce online surfing time for web visitors to find what new
 
 <a name="table"></a>
 ### Table of Contents
-- [README](#readme)
-  - [News Compilation Website](#news-compilation-website)
-    - [Description](#description)
-    - [Table of Contents](#table-of-contents)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Contributing](#contributing)
-    - [Credits](#credits)
-    - [License](#license)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Credits](#credits)
+- [License](#license)
 
 <a name="install"></a>
 ### Installation
@@ -52,7 +48,7 @@ Also, I have included my API key to the news API I used. This key allows for 200
 
 At this moment, one of the important features of this project is the search bar (although it requires terms listed among the articles that show up, which is a problem because most news provided by the API has been random). The other important feature is the ability to add/remove articles with the 'My List' page. But, this only works for adding individual articles.
 
-![image](https://user-images.githubusercontent.com/67881240/200466686-0f387052-8086-4605-bb57-09347a8b2500.png)
+![articles_page](https://user-images.githubusercontent.com/67881240/205704385-fa568ff7-21ac-4cc0-bfbc-290696f67772.png)
 
 <a name="cont"></a>
 ### Contributing
