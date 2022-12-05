@@ -15,6 +15,7 @@ body {
     color: white;
     font-size: 20px;
     font-weight: bold;
+    margin-right: 10px;
 }
 
 .search-container {
@@ -53,6 +54,12 @@ body {
 .tabs li {
     list-style: none;
     display: inline-block;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
 }
 
 .tab {
