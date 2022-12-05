@@ -37,24 +37,31 @@ app.post('/authenticate', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
 
-    // validation attempt
-    // con.query('DESCRIBE Users', (err, result) => {
-    //     if (err) throw err;
-    //     // get table attribute types/sizes
-    //     for (let i = 0; i < result.length; i++) {
-    //         types.push(result[i].Type);
-    //     }
-    // })
+    var checkUser = null
+    var checkPass = null
 
-    // var userErr = validator.check(username, types[0]);
-    // var passErr = validator.check(password, types[1]);
+    // query table attribute types
+    con.query('DESCRIBE Users', (err, result) => {
+        if (err) throw err;
 
-    // if (userErr) {
-    //     res.send('Validator failed on username!');
-    //     res.end();
-    // } else if (passErr) {
-    //     res.send('Validator failed on password!');
-    //     res.end();
+        // validate username and password
+        let userType = result[0].Type
+        let passType = result[1].Type
+        
+        checkUser = validator.check(username, userType);
+        checkPass = validator.check(password, passType);
+
+        if (validator.check(username, userType)) {
+            console.log(checkUser.message);
+            res.end();
+        } else if (checkPass) {
+            console.log(checkPass.message);
+            res.end();
+        } else {
+            console.log("Validator passed!");
+        }
+    })
+
     if (username && password) {
         con.query('SELECT * FROM Users WHERE username = ? AND password = ?',
             [username, password], (err, results) => {
