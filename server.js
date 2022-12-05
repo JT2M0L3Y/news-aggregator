@@ -47,7 +47,7 @@ app.post('/authenticate', (req, res) => {
         // validate username and password
         let userType = result[0].Type
         let passType = result[1].Type
-        
+
         checkUser = validator.check(username, userType);
         checkPass = validator.check(password, passType);
 
@@ -182,6 +182,8 @@ app.get('/articles', (req, res) => {
     con.query(sql, (err, results) => {
         if (err) throw err;
         if (results != null) {
+            console.log("Articles retrieved");
+            console.log(results);
             res.render('home.ejs', results);
         } else {
             res.send('No articles found!');
@@ -202,6 +204,8 @@ app.get('/list', (req, res) => {
     con.query(sql, [req.session.userId], (err, results) => {
         if (err) throw err;
         if (results != null) {
+            console.log("List retrieved");
+            console.log(results);
             res.render('home.ejs', results);
         } else {
             res.send('No list found!');
