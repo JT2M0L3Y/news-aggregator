@@ -102,11 +102,9 @@ app.post('/register', (req, res) => {
 
         if (first && last && email && username && password) {
             con.query('INSERT INTO Users VALUES (?, ?, ?, ?, ?)',
-                [username, password, email.normalizeEmail(), first.trim(), last.trim()], (err, results) => {
+                [username, password, email.normalize(), first.trim(), last.trim()], (err, results) => {
                     if (err) throw err;
                     if (results != null) {
-                        req.session.loggedin = true;
-                        req.session.username = username;
                         // go back to login page
                         res.redirect('index.html');
                     } else {
@@ -121,7 +119,7 @@ app.post('/register', (req, res) => {
     });
 
 // path for user pressing login on register page
-app.post('/', (req, res) => {
+app.post('/back', (req, res) => {
     // allow visitor to login to their account
     console.log("Already have account POST request received");
 
@@ -129,7 +127,7 @@ app.post('/', (req, res) => {
 })
 
 // path for user pressing logout on home page
-app.post('/logout', (req, res) => {
+app.get('/logout', (req, res) => {
     // log out of user account/end session
     console.log("Logout POST request received");
 
@@ -139,12 +137,39 @@ app.post('/logout', (req, res) => {
     res.redirect('index.html');
 });
 
+app.get('/delete', (req, res) => {
+    console.log("Delete GET request received");
+
+    let user = req.session.userId;
+
+    con.query('SELECT username FROM Users WHERE username = ?', [user], (err, result) => {
+        if (err) throw err;
+        if (result != null) {
+            // remove user from database
+            con.query('DELETE FROM ListItem WHERE username = ?', [user], (err, result) => {
+                if (err) throw err;
+                console.log("Number of records deleted: " + result.affectedRows);
+            });
+
+            con.query('DELETE FROM Users WHERE username = ?', [user], (err, result) => {
+                if (err) throw err;
+                console.log("Number of accounts deleted: " + result.affectedRows);
+            });
+        }
+    })
+
+    req.session.destroy();
+    console.log("Session destroyed");
+
+    res.redirect('index.html');
+})
+
 // path for user loading the articles tab on home page
 app.get('/articles', (req, res) => {
     // load articles tab
     console.log("Articles POST request received");
 
-    sql = 'SELECT * FROM Articles;'
+    sql = 'SELECT * FROM Articles'
 
     // get articles from database
     con.query(sql, (err, results) => {

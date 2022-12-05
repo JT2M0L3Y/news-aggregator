@@ -42,10 +42,18 @@
                         </form>
                     </li> -->
                     <!-- Planning to make this a drop down menu w/ option to delete or logout account -->
-                    <li>
-                        <form id="logout-form" action="/logout" method="POST">
-                            <input id="logout-button" type=submit value="Logout">
+                    <li class="dropdown">
+                        <button class="dropbtn">Options</button>
+                        <div class="dropdown-content">
+                            <a class="tab-btn" href="/logout">Logout</a>
+                            <a class="tab-btn" href="/delete">Delete Account</a>
+                        </div>
+                        <!-- <form id="logout-form" action="/logout" method="POST">
+                            <input class="tab-btn" id="logout-button" type=submit value="Logout">
                         </form>
+                        <form id="delete-form" action="/delete" method="POST">
+                            <input class="tab-btn" id="delete-button" type=submit value="Delete Account">
+                        </form> -->
                     </li>
                 </ul>
             </div>
