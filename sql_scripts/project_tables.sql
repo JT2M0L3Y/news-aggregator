@@ -2,7 +2,7 @@
  * Course: CPSC 321 - Database Management Systems
  * Name: Jonathan Smoley
  * Assignment: Final Project
- * Last Modified: 11/21/2022
+ * Last Modified: 12/6/2022
  */
 
 
@@ -72,6 +72,6 @@ CREATE TABLE ListItem (
 
     PRIMARY KEY (username, article_id),
     FOREIGN KEY (username) REFERENCES Users (username),
-    FOREIGN KEY (article_id) REFERENCES Articles (article_id),
-    UNIQUE (article_id)
+    FOREIGN KEY (article_id) REFERENCES Articles (article_id)
+    -- UNIQUE (article_id)
 );
