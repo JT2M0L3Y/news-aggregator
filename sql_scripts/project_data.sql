@@ -16,7 +16,7 @@ INSERT INTO Producer VALUES ('Tech Radar'), ('Business Insider'), ('NY Daily New
 
 INSERT INTO Users VALUES ( ('test'), (12345), ('test@mail.com'), ('TestName1'), ('TestName2') );
 
-INSERT INTO Preferences VALUES ('test', 'IMDB'), ('test', 'CBS News');
+INSERT INTO Preferences VALUES ('test', 'IMDB'), ('test', 'CBS News'), ('test', 'Space');
 
 INSERT INTO Articles VALUES 
         (
@@ -72,101 +72,98 @@ INSERT INTO Articles VALUES
             ("news"),
             ("Grab the Logitech G29 PS5 wheel at a massive discount"),
             ('2022-11-21 11:30:57')
-        );
-
-/*
-        (
-            "aff132fe8ab0a3b531ca7300ef28f8b3",
-            "The best Black Friday Apple Watch deal is the Apple Watch SE on sale for just $149",
-            "https://www.techradar.com/deals/the-best-black-friday-apple-watch-deal-is-the-apple-watch-se-on-sale-for-just-dollar149",
-            "Tech Radar",
-            "news",
-            "Save big on the Apple Watch SE ahead of Black Friday",
-            2022-11-22 00: 05: 22
-        ),
-
-
-        (
-            "f34152507b09fc7bd4001d556c445a30",
-            "EQS-News: Ondo InsurTech looking at 'absolutely huge opportunity' in the US",
-            "https://markets.businessinsider.com/news/stocks/eqs-news-ondo-insurtech-looking-at-absolutely-huge-opportunity-in-the-us-1031928105",
-            "businessinsider.com",
-            "finance",
-            "EQS-News: Ondo InsurTech PLC Ondo InsurTech looking at 'absolutely huge opportunity' in the US 21.11.2022 / 12:41 CET/CEST Th...",
-            2022-11-21 12: 41: 23
         ),
         (
-            "c8eca4def61e1dceb7fbeff8f380466d",
-            "EQS-News: AdEPT Technology Group reintroduces interim dividend",
-            "https://markets.businessinsider.com/news/stocks/eqs-news-adept-technology-group-reintroduces-interim-dividend-1031928035",
-            "businessinsider.com",
-            "finance",
-            "EQS-News: AdEPT Technology Group PLC AdEPT Technology Group reintroduces interim dividend 21.11.2022 / 12:19 CET/CEST The iss...",
-            2022-11-21 12: 19: 27
+            (6),
+            ("The best Black Friday Apple Watch deal is the Apple Watch SE on sale for just $149"),
+            ("https://www.techradar.com/deals/the-best-black-friday-apple-watch-deal-is-the-apple-watch-se-on-sale-for-just-dollar149"),
+            ("Tech Radar"),
+            ("news"),
+            ("Save big on the Apple Watch SE ahead of Black Friday"),
+            ('2022-11-22 00:05:22')
         ),
         (
-            "8b069535ac5f74aa05bac725f44542a1",
-            "Black Friday deals just dropped at Herchel's and everything is 30% off",
-            "https://www.techradar.com/deals/black-friday-deals-just-dropped-at-herchels-and-everything-is-30-off",
-            "techradar.com",
-            "tech",
-            "Take 30% off everything with Herschel's big Black Friday sale",
-            2022-11-21 18: 58: 53
-        ),
+            (7),
+            ("EQS-News: Ondo InsurTech looking at 'absolutely huge opportunity' in the US"),
+            ("https://markets.businessinsider.com/news/stocks/eqs-news-ondo-insurtech-looking-at-absolutely-huge-opportunity-in-the-us-1031928105"),
+            ("businessinsider.com"),
+            ("finance"),
+            ("EQS-News: Ondo InsurTech PLC Ondo InsurTech looking at 'absolutely huge opportunity' in the US 21.11.2022 / 12:41 CET/CEST Th..."),
+            ('2022-11-21 12:41:23')
+        ),        
         (
-            "2d2ead0277c6c25c4f7486fee4793c6a",
-            "Our favorite budget gaming laptop is even cheaper thanks to this Black Friday deal",
-            "https://www.techradar.com/deals/our-favorite-budget-gaming-laptop-is-even-cheaper-thanks-to-this-black-friday-deal",
-            "techradar.com",
-            "news",
-            "An HP Victus 15 for under $500? Abso-frickin-lutely",
-            2022-11-21 22: 39: 14
-        ),
+            (8),
+            ("EQS-News: AdEPT Technology Group reintroduces interim dividend"),
+            ("https://markets.businessinsider.com/news/stocks/eqs-news-adept-technology-group-reintroduces-interim-dividend-1031928035"),
+            ("businessinsider.com"),
+            ("finance"),
+            ("EQS-News: AdEPT Technology Group PLC AdEPT Technology Group reintroduces interim dividend 21.11.2022 / 12:19 CET/CEST The iss..."),
+            ('2022-11-21 12:19:27')
+        ),    
         (
-            "27f4e960eb965395e0955415b861d87e",
-            "Inside The 25th Anniversary Of The Samuel Waxman Cancer Research Foundation's Gala",
-            "https://www.forbes.com/sites/nadjasayej/2022/11/21/inside-the-25th-anniversary-of-the-samuel-waxman-cancer-research-foundations-gala/",
-            "Copyright 2022 Forbes Media LLC",
-            "business",
-            "The glitzy evening was attended by high society, fashionistas and Wall Street types who filled Cipriani Wall Street to raise $6 for cancer research.",
-            2022-11-22 00: 14: 00
-        ),
+            (9),
+            ("Black Friday deals just dropped at Herchel's and everything is 30% off"),
+            ("https://www.techradar.com/deals/black-friday-deals-just-dropped-at-herchels-and-everything-is-30-off"),
+            ("techradar.com"),
+            ("tech"),
+            ("Take 30% off everything with Herschel's big Black Friday sale"),
+            ('2022-11-21 18:58:53')
+        ),       
         (
-            "96d98b6fefbae482e9d54b5933d1d7d5",
-            "EQS-News: Poolbeg Pharma wins first non-dilutive grant funding",
-            "https://markets.businessinsider.com/news/stocks/eqs-news-poolbeg-pharma-wins-first-non-dilutive-grant-funding-1031928080",
-            "businessinsider.com",
-            "finance",
-            "EQS-News: Poolbeg Pharma PLC Poolbeg Pharma wins first non-dilutive grant funding 21.11.2022 / 12:35 CET/CEST The issuer is s...",
-            2022-11-21 12: 35: 51
-        ),
+            (10),
+            ("Our favorite budget gaming laptop is even cheaper thanks to this Black Friday deal"),
+            ("https://www.techradar.com/deals/our-favorite-budget-gaming-laptop-is-even-cheaper-thanks-to-this-black-friday-deal"),
+            ("techradar.com"),
+            ("news"),
+            ("An HP Victus 15 for under $500? Abso-frickin-lutely"),
+            ('2022-11-21 22:39:14')
+        ),       
         (
-            "c4763079d8ee90c3bb28c6537a797b97",
-            "Black Friday fitness deals: Best live discounts on workout kit, watches & more",
-            "https://www.techradar.com/deals/black-friday-fitness-deals-best-live-discounts-on-workout-kit-watches-and-more",
-            "techradar.com",
-            "news",
-            "The Black Friday fitness deals are here",
-            2022-11-17 14: 37: 59
-        ),
+            (11),
+            ("Inside The 25th Anniversary Of The Samuel Waxman Cancer Research Foundation's Gala"),
+            ("https://www.forbes.com/sites/nadjasayej/2022/11/21/inside-the-25th-anniversary-of-the-samuel-waxman-cancer-research-foundations-gala/"),
+            ("Copyright 2022 Forbes Media LLC"),
+            ("business"),
+            ("The glitzy evening was attended by high society, fashionistas and Wall Street types who filled Cipriani Wall Street to raise $6 for cancer research."),
+            ('2022-11-22 00:14:00')
+        ),       
         (
-            "c299ea8257679b7452de5ba65815c517",
-            "These Nintendo Switch game deals are among the cheapest ever this Black Friday",
-            "https://www.techradar.com/deals/these-nintendo-switch-game-deals-are-among-the-cheapest-ever-this-black-friday",
-            "techradar.com",
-            "news",
-            "Save big on the best Nintendo Switch games",
-            2022-11-21 16: 56: 28
-        ),
+            (12),
+            ("EQS-News: Poolbeg Pharma wins first non-dilutive grant funding"),
+            ("https://markets.businessinsider.com/news/stocks/eqs-news-poolbeg-pharma-wins-first-non-dilutive-grant-funding-1031928080"),
+            ("businessinsider.com"),
+            ("finance"),
+            ("EQS-News: Poolbeg Pharma PLC Poolbeg Pharma wins first non-dilutive grant funding 21.11.2022 / 12:35 CET/CEST The issuer is s..."),
+            ('2022-11-21 12:35:51')
+        ),       
         (
-            "09db9de92a2ec0034b056acfaafbce9d",
-            "The best Turtle Beach gaming headset sees massive pre-Black Friday discount",
-            "https://www.techradar.com/deals/the-best-turtle-beach-gaming-headset-sees-massive-pre-black-friday-discount",
-            "techradar.com",
-            "news",
-            "Turtle Beach's gaming headset has never been cheaper",
-            2022-11-18 14: 03: 50
+            (13),
+            ("Black Friday fitness deals: Best live discounts on workout kit, watches & more"),
+            ("https://www.techradar.com/deals/black-friday-fitness-deals-best-live-discounts-on-workout-kit-watches-and-more"),
+            ("techradar.com"),
+            ("news"),
+            ("The Black Friday fitness deals are here"),
+            ('2022-11-17 14:37:59')
+        ),       
+        (
+            (14),
+            ("These Nintendo Switch game deals are among the cheapest ever this Black Friday"),
+            ("https://www.techradar.com/deals/these-nintendo-switch-game-deals-are-among-the-cheapest-ever-this-black-friday"),
+            ("techradar.com"),
+            ("news"),
+            ("Save big on the best Nintendo Switch games"),
+            ('2022-11-21 16:56:28')
+        ),        
+        (
+            (15),
+            ("The best Turtle Beach gaming headset sees massive pre-Black Friday discount"),
+            ("https://www.techradar.com/deals/the-best-turtle-beach-gaming-headset-sees-massive-pre-black-friday-discount"),
+            ("techradar.com"),
+            ("news"),
+            ("Turtle Beach's gaming headset has never been cheaper"),
+            ('2022-11-18 14:03:50')
         ),
+/*        
         (
             "355e397bab26a1c7486dafb0617eab00",
             "These are the ridiculously cheap Black Friday earbuds I'd buy",
