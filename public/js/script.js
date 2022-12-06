@@ -4,6 +4,7 @@
 // let publisherTemplate = document.querySelector('[data-publish-template]');
 // let publishersContainer = document.querySelector('[data-publishers]');
 
+/* API request & populating articles page and adding listeners to populate list page */
 let articleTemplate = document.querySelector('[data-article-template]');
 let articlesContainer = document.querySelector('[data-articles-container]');
 let listTemplate = document.querySelector('[data-list-template]');
@@ -18,6 +19,7 @@ let articles = [];
 let url = 'https://newsdata.io/api/1/news?language=en';
 let key = 'pub_12841145b63adb79f8fb5cc26a075a97222a1';
 
+/* API request */
 fetch(url + '&apikey=' + key)
     .then(res => res.json())
     .then(data => {
@@ -68,7 +70,7 @@ fetch(url + '&apikey=' + key)
         });
     });
 
-/* Upper-center search js to search for content */
+/* To search through articles returned by API request */
 searchInput.addEventListener('keydown', (e) => {
     if (e.keyCode == 13) {
         let value = e.target.value;
@@ -87,11 +89,7 @@ searchInput.addEventListener('keydown', (e) => {
     }
 });
 
-let $articlesTab = $('#articles-tab');
-let $articlesContent = $('#articles');
-let $listTab = $('#list-tab');
-let $listContent = $('#list');
-
+/* progress made on inserting data from database */
 $(document).ready(() => {
     /* Upper-right tabs js to switch pages */
     tabs.forEach(tab => {
@@ -107,6 +105,11 @@ $(document).ready(() => {
             target.classList.remove('hide');
         });
     });
+
+    let $articlesTab = $('#articles-tab');
+    let $articlesContent = $('#articles');
+    let $listTab = $('#list-tab');
+    let $listContent = $('#list');
 
     $articlesTab.click(() => {
         $.ajax({

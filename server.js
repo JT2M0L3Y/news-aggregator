@@ -32,13 +32,8 @@ app.post('/authenticate', (req, res) => {
     // authenticate user login credentials
     console.log("Login POST request received");
 
-    let types = [];
-
     let username = req.body.username;
     let password = req.body.password;
-
-    var checkUser = null
-    var checkPass = null
 
     // query table attribute types
     con.query('DESCRIBE Users', (err, result) => {
@@ -48,8 +43,8 @@ app.post('/authenticate', (req, res) => {
         let userType = result[0].Type
         let passType = result[1].Type
 
-        checkUser = validator.check(username, userType);
-        checkPass = validator.check(password, passType);
+        let checkUser = validator.check(username, userType);
+        let checkPass = validator.check(password, passType);
 
         if (validator.check(username, userType)) {
             console.log(checkUser.message);
@@ -99,7 +94,7 @@ app.post('/register', (req, res) => {
     res.render('register.ejs');
 })
     .get('/createAccount', (req, res) => {
-        console.log("Login POST request received");
+        console.log("Create Account GET request received");
 
         let first = req.query.first;
         let last = req.query.last;
