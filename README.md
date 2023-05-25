@@ -8,6 +8,7 @@
 
 This project is a website that allows members to filter a news feed to only see content from sources and topics they want to see. 
 The goal here is to reduce online surfing time for web visitors to find what news they want to see.
+As my first attempt at full-stack development, this new compilation web app should demonstrate my abilities with common tools and practices at the end of 2022.
 
 <a name="table"></a>
 ### Table of Contents
